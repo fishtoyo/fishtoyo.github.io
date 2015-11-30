@@ -1,0 +1,145 @@
+﻿@charset "utf-8";
+
+/* ==========================================
+	 RWD Common
+========================================== */
+/* XS */
+@media screen and (max-width: 768px) {
+	.xs-show { display: block; }
+	.xs-hide { display: none; }
+}
+/* SM */
+@media screen and (min-width: 768px) {
+	.sm-show { display: block; }
+	.xs-show, .sm-hide { display: none; }
+}
+/* MD */
+@media screen and (min-width: 992px) {
+	.md-show { display: block; }
+	.sm-show, .xs-show, .md-hide { display: none; }
+}
+/* LG */
+@media screen and (min-width: 1200px) {
+	.md-show, .sm-show, .xs-show { display: none; }
+}
+
+
+/* ==========================================
+	 Extra Small Devices Phones (XS)
+========================================== */
+@media screen and (max-width: 768px) {}
+
+
+/* ==========================================
+	 Small Devices Tablets (SM)
+========================================== */
+@media screen and (min-width: 768px) {
+}
+
+
+/* ==========================================
+	 Medium Devices Desktops (MD)
+========================================== */
+@media screen and (min-width: 992px) {
+	.wrapPage {
+		position: fixed;
+		margin: 0 auto;
+		width: 1000px;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+
+	/* ==========================================
+	   Header
+	========================================== */
+	#header {
+		position: relative;
+		top: 0;
+		left: 0;
+		float: left;
+		padding: 10px;
+		width: 85px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+	#header h1 a {
+		margin-left: 0;
+		width: 85px;
+		height: 55px;
+		background: url("../images/logo2.png");
+	}
+	.menuBtn {
+		display: none;
+	}
+
+	/* ==========================================
+	   Nav
+	========================================== */
+	#nav {
+		position: relative;
+		top: 0;
+		left: 0;
+		float: right;
+		width: 420px;
+		height: auto;
+	}
+	.menu li {
+		height: 90px;
+	}
+	.menu span,
+	.menu li:nth-child(2) span {
+		padding: 9px 0 10px;
+		font-size: 34px;
+	}
+
+	/* ==========================================
+	   Content
+	========================================== */
+
+
+	/* ==========================================
+	   Index
+	========================================== */
+	/* Section */
+	.frame .subject {
+		font-size: 30px;
+	}
+	.frame .subject span {
+		padding: 16px 0 10px;
+		height: 60px;
+		font-size: 50px;
+	}
+	.frame .desc {
+		float: left;
+		padding: 50px;
+		width: 300px;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+	.frame .itemWrap {
+		float: right;
+		padding: 10px;
+		width: calc(100% - 300px);
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+	.frame .more {
+		display: none;
+	}
+	/* Section - Work */
+	#work.frame .subject span {
+		padding: 19px 0 5px;
+		font-size: 46px;
+	}
+}
+
+
+/* ==========================================
+	 Large Devices Desktops (LG)
+========================================== */
+@media screen and (min-width: 1200px) {
+}
