@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+/*
+ * CSS Document
+ * ==========================================
+ * Copyright © 2015 FishToYo
+ * http://www.fishtoyo.com
+ * ==========================================
+ * $Author: Fish $
+ * $Date: 2015-06-03 (FRI) $
+*/
+
+/* ==========================================
+   Tag Reset
+========================================== */
+body { font-size: 0.938em; }
+body,
+div,
+span,
+a,
+h1, h2, h3, h4,
+form,
+input,
+textarea,
+select,
+button,
+label { margin: 0; padding: 0; color: #333; font-family: "微軟正黑體", "Open Sans", "LiGothicMed"; letter-spacing: 0.05em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+img { border: 0; text-decoration: none; vertical-align: top; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+a { text-decoration: none; }
+textarea { resize: none; }
+input,
+label { vertical-align: middle; }
+
+/* ==========================================
+   Common Style
+========================================== */
+
+/* For Safari on iOS */
+textarea.safariOff,
+input.safariOff { -webkit-appearance: none; border-radius: 0; }
+
+/* Clear */
+.clearfix:before,
+.clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; /* IE6&7 */ }
+
+/* Reset */
+.reset { margin: 0; padding: 0; list-style: none; border: 0; border-spacing: 0; border-collapse: collapse; }
+.reset input,
+.reset label,
+.reset select { vertical-align: middle; }
+
+/* Placeholder */
+::-webkit-input-placeholder { color: #666; }
+::-moz-placeholder { color: #666; opacity: 1; }
+:-ms-input-placeholder { color: #666; }
+:-moz-placeholder { color: #666; }
+
+/* animate */
+.animate { -webkit-transition: all 0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; -ms-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; }
+
+/* Pseudo-elements */
+
+/* Hide */
+.hidden-element { position: absolute; clip: rect(1px 1px 1px 1px); /* IE6 & 7 */ clip: rect(1px, 1px, 1px, 1px); }
+/*
