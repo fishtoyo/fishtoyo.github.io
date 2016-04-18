@@ -35,24 +35,30 @@ a.btn {
   width: 100%;
   height: 70px;
   background-image: url("images/header.png");
-  z-index: 1;
+  z-index: 11;
 }
-.banner {
-  margin-top: 65px;
+.pbanner {
   position: relative;
-  height: 405px;
-  background-image: url("images/banner.png");
-  z-index: 0;
-}
-.index {
-  margin: 20px 0;
-  height: 580px;
-  background-image: url("images/index.png");
-}
-.brnad {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   height: 200px;
-  background-image: url("images/brand.png");
+  background-image: url("images/pbanner.png");
+}
+.pbanner:before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("images/pbg.png");
+}
+.view {
+  position: relative;
+  margin-bottom: 170px;
+  height: 1060px;
+  background-image: url("images/news.png");
+  z-index: 10;
 }
 .footer {
   position: absolute;
@@ -62,16 +68,25 @@ a.btn {
   height: 110px;
   background-image: url("images/footer.png");
 }
+.footer:after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: url("images/pbg2.png");
+}
 </style>
 </head>
 <body>
 
-<a href="list.html" class="btn">
+<a href="news2.html" class="btn">
 
   <span class="header"></span>
-  <span class="banner"></span>
-  <span class="index"></span>
-  <span class="brnad"></span>
+  <span class="pbanner"></span>
+  <span class="view"></span>
   <span class="footer"></span>
 
 </a>
