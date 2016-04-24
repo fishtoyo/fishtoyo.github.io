@@ -28,6 +28,12 @@ a.btn {
   min-height: 100%;
   z-index: 10;
 }
+.wrap {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 1280px;
+}
 .header {
   position: absolute;
   top: 0;
@@ -37,28 +43,22 @@ a.btn {
   background-image: url("images/header.png");
   z-index: 1;
 }
-.pbanner {
+.banner {
+  margin-top: 65px;
   position: relative;
-  margin: 55px 0 20px;
-  height: 200px;
-  background-image: url("images/pbanner.png");
+  height: 445px;
+  background-image: url("images/banner.png");
+  z-index: 0;
 }
-.pbanner:before {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  bottom: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("images/pbg.png");
+.index {
+  margin: 40px 0 30px;
+  height: 551px;
+  background-image: url("images/index.png");
 }
-.view {
-  position: relative;
-  margin-bottom: 170px;
-  height: 825px;
-  background-image: url("images/news2.png");
-  z-index: 10;
+.brnad {
+  margin-bottom: 90px;
+  height: 180px;
+  background-image: url("images/brand.png");
 }
 .footer {
   position: absolute;
@@ -66,29 +66,33 @@ a.btn {
   left: 0;
   width: 100%;
   height: 100px;
-  background-image: url("images/footer2.png");
+  background-image: url("images/footer.png");
 }
-.footer:after {
-  pointer-events: none;
-  content: "";
+span.menu {
+  display: block;
   position: absolute;
-  top: -150px;
-  left: 0;
-  width: 100%;
-  height: 160px;
-  background: url("images/pbg2.png");
+  top: 74px;
+  left: 323px;
+  min-width: 150px;
+  width: 150px;
+  height: 410px;
+  overflow: hidden;
+  background-image: url("images/hover.png");
+  z-index: 10;
 }
 </style>
 </head>
 <body>
 
-<a href="know.html" class="btn">
-
-  <span class="header"></span>
-  <span class="pbanner"></span>
-  <span class="view"></span>
-  <span class="footer"></span>
-
+<a href="list.html" class="btn">
+  <span class="wrap">
+    <span class="menu"></span>
+  </span>
+    <span class="header"></span>
+    <span class="banner"></span>
+    <span class="index"></span>
+    <span class="brnad"></span>
+    <span class="footer"></span>
 </a>
 
 </body>
