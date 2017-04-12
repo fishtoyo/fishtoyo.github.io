@@ -578,6 +578,10 @@ body.color-5 #blog {
   padding-bottom: 40px;
 }
 
+.coming-soon .more {
+  padding: 15px 0;
+}
+
 .frame-image.page {
   display: block;
   margin: 0 auto;
@@ -618,7 +622,6 @@ body.color-5 #blog {
 .frame-image.page .window-wrap {
   display: block;
 }
-
 @media screen and (max-width: 1440px) {
   #banner .author {
     top: -100px;
