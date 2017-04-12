@@ -1,0 +1,57 @@
+﻿@charset "utf-8";
+
+/* ==========================================
+	 RWD Common
+========================================== */
+/* LG */
+@media screen and (min-width: 1200px) {
+	.md-show, .sm-show, .xs-show { display: none; }
+}
+/* MD */
+@media screen and (max-width: 1200px) {
+	.md-show { display: block; }
+	.sm-show, .xs-show, .md-hide { display: none; }
+}
+/* SM */
+@media screen and (max-width: 992px) {
+	.sm-show { display: block; }
+	.xs-show, .sm-hide { display: none; }
+}
+/* XS */
+@media screen and (max-width: 768px) {
+	.xs-show { display: block; }
+	.xs-hide { display: none; }
+}
+
+
+/* ==========================================
+	 Large Devices Desktops (LG)
+========================================== */
+@media screen and (min-width: 1200px) {}
+
+
+/* ==========================================
+	 Medium Devices Desktops (MD)
+========================================== */
+@media screen and (max-width: 1200px) {
+	.pageWrap {
+		max-width: 1000px;
+	}
+	#header { background-color: yellow;}
+}
+
+
+/* ==========================================
+	 Small Devices Tablets (SM)
+========================================== */
+@media screen and (max-width: 992px) {
+	#header { background-color: blue;}
+}
+
+
+/* ==========================================
+	 Extra Small Devices Phones (XS)
+========================================== */
+@media screen and (max-width: 768px) {
+	#header { background-color:  red;}
+}
