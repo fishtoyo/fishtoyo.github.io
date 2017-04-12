@@ -757,6 +757,8 @@ body.color-5 #blog {
     padding: 70px 0 130px;
     width: 320px;
     height: 100px;
+    border: none;
+    background: none;
   }
   .frame-txt {
     padding: 0 20px;
@@ -830,10 +832,6 @@ body.color-5 #blog {
 @media screen and (max-width: 400px) {
   #banner {
     height: 400px;
-  }
-  #banner .box-wrap {
-    border: none;
-    background: none;
   }
   #banner .author {
     top: -100px;
