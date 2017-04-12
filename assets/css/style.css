@@ -777,6 +777,9 @@ body.color-5 #blog {
         -ms-transform: scale(1);
             transform: scale(1);
   }
+  .slider-list li {
+    width: 50%;
+  }
 }
 @media screen and (max-width: 640px) {
   .frame-txt {
@@ -821,7 +824,7 @@ body.color-5 #blog {
   }
 
   .slider-list li {
-    width: 50%;
+    width: 100%;
   }
 }
 @media screen and (max-width: 400px) {
