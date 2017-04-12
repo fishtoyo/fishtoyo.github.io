@@ -1580,6 +1580,9 @@
 	padding-right: 10px;
 	width: 35%;
 }
+.device-view .item-wrap .text {
+	background: none;
+}
 .device-view .line {
 	margin-bottom: 3px;
 	height: 5px;
