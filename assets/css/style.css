@@ -303,11 +303,12 @@ body.color-5 #blog {
           border-radius: 50%;
 }
 
-.menu li a:hover {
-  color: #fff;
+.menu li a:hover,
+.menu li.current a {
 }
 
-.menu li a:hover:before {
+.menu li a:hover:before,
+.menu li.current a:before {
   margin: -70px 0 0 -70px;
   width: 140px;
   height: 140px;
