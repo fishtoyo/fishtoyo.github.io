@@ -454,7 +454,7 @@ body.color-5 #blog {
   display: block;
   position: relative;
   margin: 15px auto 0;
-  padding: 15px 0;
+  padding: 15px 25px 15px 0;
   max-width: 200px;
   width: 100%;
   color: #2a444b;
