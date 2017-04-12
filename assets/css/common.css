@@ -949,6 +949,10 @@ input.safariOff {
 /* ==========================================
    Use Item
 ========================================== */
+.use-item {
+  margin: 0 auto;
+  max-width: 1200px;
+}
 .use-item .group {
   display: table;
   width: 100%;
@@ -1043,7 +1047,7 @@ input.safariOff {
 
 /* Color */
 .pink {
-  background-color: #ffbdbd;
+  background-color: #fb8f8f;
 }
 .blue {
   background-color: #a2c1ff;
