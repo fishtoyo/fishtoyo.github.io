@@ -713,7 +713,7 @@ body.color-5 #blog {
     padding-bottom: 30px;
   }
 
-  .slider-list li {
+  .slider-list .box {
     padding: 10px;
   }
   .slider-item {
@@ -729,7 +729,7 @@ body.color-5 #blog {
   .slider-list {
     padding: 20px 10px;
   }
-  .slider-list li {
+  .slider-list .box {
     width: 33.3%;
   }
   .coming-soon {
@@ -783,7 +783,7 @@ body.color-5 #blog {
         -ms-transform: scale(1);
             transform: scale(1);
   }
-  .slider-list li {
+  .slider-list .box {
     width: 50%;
   }
 }
@@ -829,7 +829,7 @@ body.color-5 #blog {
     font-size: .8em;
   }
 
-  .slider-list li {
+  .slider-list .box {
     width: 100%;
   }
 }
