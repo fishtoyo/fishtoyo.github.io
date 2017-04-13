@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  font-size: 0.938em;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.05em;
   font-family: "Noto Sans TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
@@ -52,7 +52,7 @@ img {
           box-sizing: border-box;
 }
 
-a {
+a, a:hover, a:focus {
   text-decoration: none;
 }
 
@@ -1107,7 +1107,7 @@ input.safariOff {
 }
 
 /* Slider - Item */
-.slider-list li {
+.slider-list .box {
   float: left;
   padding: 15px;
   width: 25%;
@@ -1126,13 +1126,40 @@ input.safariOff {
 
 .slider-item .img {
   margin: 0 auto;
+  position: relative;
+  z-index: 0;
 }
 
 .slider-item .img img {
   width: 100%;
 }
 
+.slider-item .num {
+  position: relative;
+  display: block;
+  padding: 10px 0 5px;
+  font-size: 1.3em;
+  text-align: center;
+}
+.slider-item .num:before {
+  pointer-events: none;
+  content: "...";
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  width: 100%;
+  font-size: 1.467em;
+}
+.slider-item .title {
+  display: block;
+  padding: 15px 10px 5px;
+  font-size: 1.2em;
+  text-align: center;
+}
 .slider-item a {
+  color: #333;
+}
+.slider-item a.none {
   cursor: default;
 }
 
