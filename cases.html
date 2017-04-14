@@ -15,10 +15,10 @@
 <!-- Web Fonts -->
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!-- CSS Customization -->
+<!-- Plugins -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<!-- CSS Customization -->
 <link href="assets/css/common.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
 <!--[if lt IE 9]>
 <script src="assets/js/plugins/html5shiv-3.7.2.min.js"></script>
 <script src="assets/js/plugins/respond-1.4.2.min.js"></script>
@@ -1184,15 +1184,10 @@
 <script src="assets/js/plugins/jQuery/jquery.mobile-1.4.5.custom.min.js"></script>
 <script src="assets/js/plugins/Bootstrap/bootstrap-3.3.2.min.js"></script>
 <script src="assets/js/plugins/jQuery/jquery.tools-1.1.2.min.js"></script>
-<script src="assets/js/plugins/jQuery/jquery-scrolltofixed-min.js"></script>
-<script src="assets/js/common.js"></script>
 <script>
 $(document).ready(function(e) {
   $(".btn-box").tabs("#panes > .pane");
-  var p = $(".btn-box");
-  var offset = p.offset();
   $(".btn-box a").click(function(){
-    // $('html, body').animate({scrollTop : offset.top - 110}, 800);
     $('#panes').removeClass().addClass($(this).data('num'));
     return false;
   });
