@@ -951,7 +951,6 @@ input.safariOff {
 ========================================== */
 .use-item {
   margin: 0 auto;
-  max-width: 1200px;
 }
 .use-item .group {
   display: table;
@@ -1046,7 +1045,7 @@ input.safariOff {
 }
 
 /* Color */
-.pink {
+/*.pink {
   background-color: #fb8f8f;
 }
 .blue {
@@ -1057,7 +1056,7 @@ input.safariOff {
 }
 .yellow {
   background-color: #fcf851;
-}
+}*/
 
 /* ==========================================
    Slider
