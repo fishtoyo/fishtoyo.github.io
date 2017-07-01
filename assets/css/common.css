@@ -2455,7 +2455,7 @@ body.color-5 #blog {
   height: 8px;
   border: 2px solid #d6d4d5;
 }
-.page-2 .login .btn {
+.page-2 .login .button {
   margin: 3px auto 0;
   width: 30px;
   height: 6px;
@@ -2550,7 +2550,7 @@ body.color-5 #blog {
   height: 100%;
   background-color: #fff;
 }
-.page-3 .header .btn {
+.page-3 .header .button {
   float: left;
   width: 15px;
   height: 100%;
@@ -2576,7 +2576,7 @@ body.color-5 #blog {
   height: 15px;
   background-color: #fff;
 }
-.page-3 .banner .btn {
+.page-3 .banner .button {
   float: left;
   width: 15px;
   height: 15px;
@@ -2901,7 +2901,7 @@ body.color-5 #blog {
   height: 5px;
   background-color: #fff;
 }
-.page-6 .login .btn {
+.page-6 .login .button {
   float: left;
   margin-left: 5px;
   width: 15px;
@@ -3097,7 +3097,7 @@ body.color-5 #blog {
   height: 5px;
   background-color: #fff;
 }
-.page-7 .login .btn {
+.page-7 .login .button {
   margin: 6px auto 0;
   width: 30px;
   height: 5px;
@@ -3195,7 +3195,7 @@ body.color-5 #blog {
   height: 9px;
   background-color: #fff;
 }
-.page-8 .search-bar .btn {
+.page-8 .search-bar .button {
   float: left;
   width: 15px;
   height: 15px;
