@@ -1105,10 +1105,12 @@ input.safariOff {
 }
 
 /* Slider - Item */
-.slider-list .box {
-  float: left;
-  padding: 15px;
+.grid-sizer {
   width: 25%;
+}
+.slider-list .box {
+  padding: 15px;
+  width: 24%;
 }
 
 .slider-item {
@@ -1559,9 +1561,12 @@ body.color-5 #blog {
 
 #banner .box-wrap .subject {
   margin: 0 auto;
+  padding: 0;
   width: 354px;
   height: 101px;
   overflow: hidden;
+  font-size: 0;
+  line-height: 0;
   text-indent: -9999px;
   background: url("../images/ban_txt.png");
 }
@@ -3689,6 +3694,12 @@ body.color-5 #blog {
          -o-background-size: contain;
             background-size: contain;
   }
+  .grid-sizer {
+    width: 33.3%;
+  }
+  .slider-list .box {
+    width: 31%;
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -3775,9 +3786,6 @@ body.color-5 #blog {
   .slider-list {
     padding: 20px 10px;
   }
-  .slider-list .box {
-    width: 33.3%;
-  }
   .coming-soon {
     padding: 10px 0 20px;
   }
@@ -3829,8 +3837,11 @@ body.color-5 #blog {
         -ms-transform: scale(1);
             transform: scale(1);
   }
-  .slider-list .box {
+  .grid-sizer {
     width: 50%;
+  }
+  .slider-list .box {
+    width: 48%;
   }
 }
 @media screen and (max-width: 640px) {
@@ -3875,8 +3886,11 @@ body.color-5 #blog {
     font-size: .8em;
   }
 
-  .slider-list .box {
+  .grid-sizer {
     width: 100%;
+  }
+  .slider-list .box {
+    width: 96%;
   }
 }
 @media screen and (max-width: 400px) {
