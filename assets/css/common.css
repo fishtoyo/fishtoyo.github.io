@@ -285,6 +285,7 @@ textarea.safariOff, input.safariOff { -webkit-appearance: none; border-radius: 0
 .grid-sizer { display: inline-block; vertical-align: top; width: 20%; }
 .slider-list .box { padding: 15px; width: 19%; display: inline-block; vertical-align: top; }
 .slider-item { display: block; position: relative; padding: 10px; width: 100%; background-color: #fff; -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, .1); -moz-box-shadow: 1px 1px 15px rgba(0, 0, 0, .1); box-shadow: 1px 1px 15px rgba(0, 0, 0, .1); }
+.slider-item a { pointer-events: none; }
 .slider-item:hover { box-shadow: 0 0 10px rgba(0,0,0,.3); }
 .slider-item .img { margin: 0 auto; position: relative; z-index: 0; }
 .slider-item .img img { width: 100%; }
