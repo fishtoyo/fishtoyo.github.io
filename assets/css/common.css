@@ -1006,7 +1006,7 @@ body.color-5 #blog { background-color: #86eac4; }
     padding: 40px 20px;
   }
   .top-area .max-wrap .right-side {
-    padding: 40px 0 !important;
+    padding: 40px 0 0 !important;
   }
   .top-area .max-wrap .project-subject {
     font-size: 20px;
