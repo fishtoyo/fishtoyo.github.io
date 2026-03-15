@@ -862,10 +862,9 @@ body.color-5 #blog { background-color: #86eac4; }
    .coming-soon { padding: 10px 0 20px; }
 }
 @media screen and (max-width:768px) {
-   #header h1 { width: calc(100%/4); }
    #header h1 a { width: 100%; }
-   .menu li { width: 33.3%; }
-   #nav { width: calc(100% - (100%/4)); }
+   .menu li { width: 50%; }
+   #nav { width: 200px; }
    #banner { position: relative; height: 550px; }
    #banner .author { top: -130px; }
    #banner .box-wrap { max-width: calc(100% - 40px); left: 20px; transform: translate(0,-50%); }
@@ -875,7 +874,7 @@ body.color-5 #blog { background-color: #86eac4; }
    .window-wrap { margin: 20px auto; -webkit-transform: scale(.6); -ms-transform: scale(.6); transform: scale(.6); }
    #cases .window-wrap, #blog .window-wrap { -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
    .grid-sizer { width: 50%; }
-   .slider-list .box { width: 32%; }
+   .slider-list .box { width: calc(33.33% - 14px); }
    .slider-item .title { font-size: 15px; }
 }
 @media screen and (max-width:640px) {
