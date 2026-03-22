@@ -28,28 +28,28 @@
 
 <header id="header">
   <div class="max-wrap clearfix">
-    <div class="home"><a href="./" title="FishToYo"><i class="material-icons">home</i><strong>首頁</strong></a></div>
-    <div class="menuBtn">
-      <div class="box">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-    </div>
+    <div class="home"><a href="./" title="FishToYo"><i class="material-icons">home</i><strong data-i18n="menu_home">首頁</strong></a></div>
     <nav id="nav" class="clearfix">
-      <h1 class="hidden-element">主選單</h1>
+      <h1 class="hidden-element" data-i18n="nav_main_menu">主選單</h1>
       <ul class="reset menu">
         <li class="current">
           <a href="about.html" title="關於我">
             <i class="material-icons">face</i>
-            <strong>關於我</strong>
+            <strong data-i18n="menu_about">關於我</strong>
           </a>
         </li>
         <li>
           <a href="cases.html" title="作品集">
             <i class="material-icons">important_devices</i>
-            <strong>作品集</strong>
+            <strong data-i18n="menu_cases">作品集</strong>
           </a>
         </li>
+				<li>
+					<a href="javascript:void(0);" id="lang-btn" title="Language">
+						<i class="material-icons">language</i>
+						<strong data-i18n="menu_lang">ENGLISH</strong>
+					</a>
+				</li>
       </ul>
     </nav>
   </div>
@@ -57,45 +57,38 @@
 
 <div id="about" class="page-wrap">
 	<article>
-		<header class="page-title">About<h1>關於我</h1></header>
+		<header class="page-title">About<h1 data-i18n="about_title_h1">關於我</h1></header>
 		<div class="main-description">
 			<div class="main-wrap">
-				<div class="title">擁有<strong>16</strong>年以上實務經驗</div>
+				<div class="title" data-i18n="about_page_title">擁有<strong>16</strong>年以上實務經驗</div>
 				<div class="content">
-          <p>
+          <p data-i18n="about_p1">
+            - 前端開發： HTML5, CSS3, SCSS, RWD, JavaScript, TypeScript<br>
+            - 框架與工具： Vue, React, Tailwind CSS, GSAP, jQuery<br>
+            - 設計與實作： 1:1 Pixel-Perfect, UI Design, Figma, PS/AI, Wireframe<br>
+            - 技術優化： SEO優化, 網頁效能優化, 跨瀏覽器相容性
+          </p>
+          <p data-i18n="about_p2">
             自 13 歲製作第一個網站起，這份熱愛已持續 26 年，早已內化成我生活的一部分。<br>
             憑藉這份初衷，我一路攻讀資料處理與資訊管理專業，並正式投入網頁開發領域 16 年。
           </p>
-          <p>
-            我始終將不斷進化的技術視為養分，從早期的 jQuery、Bootstrap 到現代的 Vue 與 AI 驅動開發，我享受每一場技術變革帶來的可能性。
+          <p data-i18n="about_p3">
+            我始終將不斷進化的技術視為養分，從早期的 jQuery、Bootstrap 到現代的 Vue, React 與 AI 協作開發，我享受每一場技術變革帶來的可能性。
           </p>
-          <p>
-            在累積 290+ 個專案的過程中，我磨練出對跨裝置適應性（RWD）的精準掌控。
+          <p data-i18n="about_p4">
+            在累積 300+ 專案的過程中，磨練出對跨裝置適應性 RWD 的掌控，對於 UI 精準判斷與自訂模組化元件來提高效率。
           </p>
-          <p>
-            不論是 活動網站、購物車平台、企業形象網站，或是 舊站 RWD 重構，我都具備豐富經驗與實作成果。對於 跨瀏覽器、跨裝置的適應性 以及 人性化的互動設計，亦有成熟的理解與應用。
+          <p data-i18n="about_p5">
+            不論是活動網站、購物車平台、企業形象網站，或是 舊站 RWD 重構，我都具備豐富經驗與實作成果。對於跨瀏覽器、跨裝置的適應性以及人性化的互動設計，亦有成熟的理解與應用。
           </p>
-          <p>
+          <p data-i18n="about_p6">
             網站設計對我而言不只是專業，更是結合熱情與創造力的持續探索。
-          </p>
-          <p>
-            My passion for web development ignited at age 13, a spark that has endured for 26 years and become an intrinsic part of who I am. Building on this lifelong interest, I pursued formal education in Data Processing and Information Management, eventually leading to a 16-year career as a professional developer delivering over 280 projects.
-          </p>
-          <p>
-            I view the constant evolution of technology as nourishment for my craft. From the early days of jQuery and Bootstrap to modern Vue.js and AI-driven development, I embrace the possibilities brought by every technological shift. Through the delivery of over 280+ projects, I have honed a precise mastery over Responsive Web Design (RWD) and cross-device compatibility.
-          </p>
-          <p>
-            My portfolio encompasses a wide range of achievements, including promotional microsites, e-commerce platforms, corporate identities, and legacy site RWD reconstructions. I possess a mature understanding and practical application of cross-browser consistency, adaptive layouts, and user-centric interactive design.
-          </p>
-          <p>
-            To me, web design is not just a profession; it is a continuous exploration that combines passion, creativity, and technical excellence.
           </p>
         </div>
 			</div>
 		</div>
 	</article>
-  <footer id="footer">
-    <a href="https://www.facebook.com/fishtoyo" title="Facebook" class="fb animate"><i class="fa fa-facebook"></i></a>
+  <footer id="footer" data-i18n="footer_copy">
     Copyright &copy; 2026 Fishtoyo
   </footer>
 </div>
@@ -110,7 +103,34 @@
 <script src="assets/js/plugins/Bootstrap/bootstrap-3.3.2.min.js"></script>
 <script>
 $(document).ready(function(e) {
+  // --- 語系切換邏輯 ---
+  var currentLang = localStorage.getItem('site_lang') || 'zh'; // 預設語系
+  var i18nData = {};
 
+  // 1. 取得 JSON 語系檔
+  $.getJSON('lang.json', function(data) {
+    i18nData = data;
+    setLanguage(currentLang); // 載入完成後初始化文字
+  });
+
+  // 2. 監聽語系切換按鈕
+  $('#lang-btn').on('click', function(e) {
+    e.preventDefault();
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    localStorage.setItem('site_lang', currentLang); // 記住使用者選擇的語系
+    setLanguage(currentLang);
+  });
+
+  // 3. 執行畫面文字替換
+  function setLanguage(lang) {
+    $('html').attr('lang', lang === 'zh' ? 'zh-Hant' : 'en'); // 更新 HTML 語系宣告
+    $('[data-i18n]').each(function() {
+      var key = $(this).attr('data-i18n');
+      if (i18nData[lang] && i18nData[lang][key]) {
+        $(this).html(i18nData[lang][key]);
+      }
+    });
+  }
 });
 </script>
 </body>
