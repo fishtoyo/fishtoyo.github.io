@@ -22,28 +22,28 @@
 
 <header id="header">
   <div class="max-wrap clearfix">
-    <div class="home"><a href="./" title="FishToYo"><i class="material-icons">home</i><strong>首頁</strong></a></div>
-    <div class="menuBtn">
-      <div class="box">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-    </div>
+    <div class="home"><a href="./" title="FishToYo"><i class="material-icons">home</i><strong data-i18n="menu_home">首頁</strong></a></div>
     <nav id="nav" class="clearfix">
-      <div class="hidden-element">主選單</div>
+      <div class="hidden-element" data-i18n="nav_main_menu">主選單</div>
       <ul class="reset menu">
         <li>
           <a href="about.html" title="關於我">
             <i class="material-icons">face</i>
-            <strong>關於我</strong>
+            <strong data-i18n="menu_about">關於我</strong>
           </a>
         </li>
         <li class="current">
           <a href="cases.html" title="作品集">
             <i class="material-icons">important_devices</i>
-            <strong>作品集</strong>
+            <strong data-i18n="menu_cases">作品集</strong>
           </a>
         </li>
+				<li>
+					<a href="javascript:void(0);" id="lang-btn" title="Language">
+						<i class="material-icons">language</i>
+						<strong data-i18n="menu_lang">ENGLISH</strong>
+					</a>
+				</li>
       </ul>
     </nav>
   </div>
@@ -51,16 +51,15 @@
 
 <div id="cases" class="page-wrap">
   <section>
-    <header class="page-title">Cases<h1>作品集</h1></header>
+    <header class="page-title">Cases<h1 data-i18n="cases_title_h1">作品集</h1></header>
     <div class="main-description">
       <div class="main-wrap">
-        <div class="title">集合 <strong>290+</strong> 專案</div>
+        <div class="title" data-i18n="cases_page_title">集合 <strong>300+</strong> 專案</div>
       </div>
     </div>
     <div class="slider-list"></div>
   </section>
-  <footer id="footer">
-    <a href="https://www.facebook.com/fishtoyo" title="Facebook" class="fb animate"><i class="fa fa-facebook"></i></a>
+  <footer id="footer" data-i18n="footer_copy">
     Copyright &copy; 2026 Fishtoyo
   </footer>
 </div>
@@ -100,6 +99,35 @@ $(document).ready(function(e) {
     // 套用回版面上
     $sliderList.html(htmlContent);
   });
+
+  // --- 語系切換邏輯 ---
+  var currentLang = localStorage.getItem('site_lang') || 'zh'; // 預設語系
+  var i18nData = {};
+
+  // 1. 取得 JSON 語系檔
+  $.getJSON('lang.json', function(data) {
+    i18nData = data;
+    setLanguage(currentLang); // 載入完成後初始化文字
+  });
+
+  // 2. 監聽語系切換按鈕
+  $('#lang-btn').on('click', function(e) {
+    e.preventDefault();
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    localStorage.setItem('site_lang', currentLang); // 記住使用者選擇的語系
+    setLanguage(currentLang);
+  });
+
+  // 3. 執行畫面文字替換
+  function setLanguage(lang) {
+    $('html').attr('lang', lang === 'zh' ? 'zh-Hant' : 'en'); // 更新 HTML 語系宣告
+    $('[data-i18n]').each(function() {
+      var key = $(this).attr('data-i18n');
+      if (i18nData[lang] && i18nData[lang][key]) {
+        $(this).html(i18nData[lang][key]);
+      }
+    });
+  }
 });
 </script>
 </body>
