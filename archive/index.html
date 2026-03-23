@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="description" content="FishToYo :: Web Designer &amp; Front-end Developer">
+<meta name="keywords" content="FishToYo :: Web Designer &amp; Front-end Developer">
+<title>FishToYo :: Web Designer &amp; Front-end Developer</title>
+<!-- Favicon -->
+<link href="favicon.ico" rel="icon">
+<link href="favicon.ico" rel="shortcut icon">
+<link href="apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Web Fonts -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Plugins -->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/aos.css" rel="stylesheet">
+<!-- CSS Customization -->
+<link href="assets/css/common.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="assets/js/plugins/html5shiv-3.7.2.min.js"></script>
+<script src="assets/js/plugins/respond-1.4.2.min.js"></script>
+<![endif]-->
+</head>
+<body class="color-5">
+
+<header id="header">
+	<div class="max-wrap clearfix">
+		<div class="home"><a href="./" title="FishToYo"><i class="material-icons">home</i><strong data-i18n="menu_home">首頁</strong></a></div>
+		<nav id="nav" class="clearfix">
+			<div class="hidden-element" data-i18n="nav_main_menu">主選單</div>
+			<ul class="reset menu">
+				<li>
+					<a href="about.html" title="關於我">
+						<i class="material-icons">face</i>
+						<strong data-i18n="menu_about">關於我</strong>
+					</a>
+				</li>
+				<li>
+					<a href="cases.html" title="作品集">
+						<i class="material-icons">important_devices</i>
+						<strong data-i18n="menu_cases">作品集</strong>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" id="lang-btn" title="Language">
+						<i class="material-icons">language</i>
+						<strong data-i18n="menu_lang">ENGLISH</strong>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div class="page-wrap clearfix">
+	<section id="banner" class="index-frame">
+		<div class="box-wrap">
+			<div class="author"><img src="assets/images/author.png" alt="*"></div>
+			<div class="subject"><h1 data-i18n="banner_title">資深前端開發</h1> <span data-i18n="banner_desc">300+ 專案 , 12年遠端經驗</span></div>
+		</div>
+	</section>
+  <section id="top" class="top-area">
+    <div class="max-wrap">
+      <div class="left-side" data-aos="fade-right"><img src="assets/images/img1.png" alt="*"></div>
+      <div class="right-side" data-aos="fade-left">
+        <h2 class="project-subject" data-i18n="proj1_title">大型 B2B 專案實績<br>台灣商業媒合平台</h2>
+        <div class="href"><span data-i18n="url_label">網址：</span><a href="https://www.taiwanbm.com.tw/" target="_blank">https://www.taiwanbm.com.tw/</a></div>
+        <div class="summary" data-i18n="proj1_desc">
+          一人操刀製作超過 150 頁規模的大型 B2B 電商系統。在高度複雜度的使用者、會員及商家管理介面中，展現了表單邏輯整合與 UI 實作能力。
+        </div>
+        <div class="box" data-i18n="proj1_f1">
+          <strong>技術架構與模組化</strong><br>
+          採用 HTML5 / CSS3 (SSR 架構) 為核心，並自定義 SCSS 模組化元件庫。透過組件化思維，在面對龐大頁面量時仍能維持一致的視覺規範，並大幅提升開發效率與後續維護的便利性。
+        </div>
+        <div class="box" data-i18n="proj1_f2">
+          <strong>高複雜度介面挑戰</strong><br>
+          成功克服 「五層垂直分類主選單」 的實作難題。在確保導覽結構清晰的前提下，與企劃及工程師深度溝通，規劃出兼具操作直覺與效能的選單功能，完美呈現龐大的資訊階層。
+        </div>
+        <div class="box" data-i18n="proj1_f3">
+          <strong>效能與搜尋優化</strong><br>
+          精準管理 JavaScript / jQuery 輕量化套件，整合文字編輯器功能，並針對全站進行 SEO 關鍵字結構優化。
+        </div>
+        <div class="box" data-i18n="proj1_f4">
+          <strong>極致 RWD 校正</strong><br>
+          針對不同裝置尺寸進行像素級的仔細校正，確保在 150 頁的繁雜資訊下，用戶在任何載具皆能獲得最精準、流暢的瀏覽體驗。
+        </div>
+      </div>
+    </div>
+    <div class="max-wrap">
+      <div class="left-side" data-aos="fade-left"><img src="assets/images/img2.png" alt="*"></div>
+      <div class="right-side" data-aos="fade-right">
+        <h2 class="project-subject" data-i18n="proj2_title">學術/技術服務預約平台<br>國科會自然處尖端核心設施</h2>
+        <div class="href"><span data-i18n="url_label">網址：</span><a href="https://www.acoreplus2024.com.tw/" target="_blank">https://www.acoreplus2024.com.tw/</a></div>
+        <div class="summary" data-i18n="proj2_desc">
+          一個結合學術權威感與自動化技術申請流程的整合型專案。負責品牌視覺的高度還原，專注於複雜的「技術服務預約」與「訂單申請」流程，轉化為流暢且直覺的前端交互體驗。
+        </div>
+        <div class="box" data-i18n="proj2_f1">
+          <strong>專業服務流程的 UI 轉譯</strong><br>
+          將研究所繁複的技術申請表單與規範，實作為簡潔、易操作的功能介面。透過嚴謹的前端邏輯引導，確保使用者在進行技術服務「下單」與「申請」時，能精準完成各項細節，減少溝通成本。
+        </div>
+        <div class="box" data-i18n="proj2_f2">
+          <strong>品牌權威與功能的結合</strong><br>
+          在維持研究單位高質感視覺（如層次感排版、動態進場）的同時，完美整合了會員管理系統與訂單追蹤功能，讓嚴肅的學術服務也能具備現代化的數位操作質感。
+        </div>
+        <div class="box" data-i18n="proj2_f3">
+          <strong>高精度的 RWD 實作</strong><br>
+          由於申請流程包含大量表單欄位，針對各類裝置進行了精細的校正，確保使用者在不同載具都能精準、無誤地完成申請程序。
+        </div>
+      </div>
+    </div>
+    <div class="max-wrap">
+      <div class="left-side" data-aos="fade-right"><img src="assets/images/img3.png" alt="*"></div>
+      <div class="right-side" data-aos="fade-left">
+        <h2 class="project-subject" data-i18n="proj3_title">工業形象官網<br>LCS Auto & Hardware</h2>
+        <div class="href"><span data-i18n="url_label">網址：</span><a href="https://www.lcsdevco.com.tw/" target="_blank">https://www.lcsdevco.com.tw/</a></div>
+        <div class="summary" data-i18n="proj3_desc">
+          精準控制工業產品影像的呈現與 RWD 佈局，確保型錄資訊在各種裝置上皆具備極佳的讀取性與載入速度。在這個專案中，我運用了大量的 GSAP (GreenSock Animation Platform) 技術，將剛硬的工業產品轉化為具備高質感與流動感的數位體驗。
+        </div>
+        <div class="box" data-i18n="proj3_f1">
+          <strong>GSAP 驅動的動態交互（抓住眼球）</strong><br>
+          首頁產品區實作垂直式動態圖文切換效果，透過 GSAP 精準控制捲動節奏，創造出層次分明的進場動態，成功提高使用者的停留時間與下滑意願，將傳統的工業產品介紹轉化為震撼的視覺敘事。
+        </div>
+        <div class="box" data-i18n="proj3_f2">
+          <strong>導覽體驗優化（增加互動感）</strong><br>
+          在產品介紹頁面中，規劃了產品項目錨點定位，讓客戶能根據需求快速跳轉至目標產品，並在定位過程中維持優雅的過場視覺，在提升操作便利性的同時，也為嚴謹的工業型錄增添了細膩的互動感。
+        </div>
+        <div class="box" data-i18n="proj3_f3">
+          <strong>性能與視覺的平衡</strong><br>
+          雖然使用了大量的動態效果，但我針對 GSAP 的渲染路徑進行了優化，確保在呈現高解析度工業影像時，依然能維持極佳的流暢度與跨瀏覽器相容性。
+        </div>
+      </div>
+    </div>
+  </section>
+	<section id="about" class="index-frame">
+		<div class="max-wrap clearfix">
+			<div class="frame-txt">
+				<header class="subject"><i class="material-icons">face</i><h1 data-i18n="about_title_h1">關於我</h1></header>
+				<p class="description" data-i18n="about_desc">
+					擅長遠端作業與自主管理<br>
+          從設計到編碼的精準性<br>
+          高效協作與模組化元件<br>
+				</p>
+				<a href="about.html" title="一定要瞧瞧" class="more" data-i18n="btn_check_it_out">一定要瞧瞧<i class="fa fa-angle-right"></i></a>
+			</div>
+			<div class="frame-image">
+				<div class="slogan" data-aos="zoom-out" data-aos-delay="1500" data-i18n="about_slogan"><span>擁有&nbsp;<strong>16</strong>&nbsp;年實戰經驗</span></div>
+				<div class="window-wrap">
+					<div class="window-1">
+						<div class="win-shadow" data-aos="fade" data-aos-delay="200">
+							<div class="header">
+								<div class="tab">
+									<div class="item-1"></div>
+									<div class="item-2"></div>
+								</div>
+								<div class="search-bar"><div class="bar"></div></div>
+							</div>
+							<div class="page">
+								<div class="left-area">
+									<div class="menu"></div>
+									<div class="empty-line box-1"></div>
+									<div class="empty-line box-2"></div>
+									<div class="empty-line box-3 clearfix">
+										<span class="color-1"></span>
+										<span class="color-2"></span>
+										<span class="color-3"></span>
+										<div class="clearfix"></div>
+										<span class="color-4"></span>
+										<span class="color-5"></span>
+										<span class="color-6"></span>
+									</div>
+								</div>
+								<div class="right-area empty-line clearfix">
+									<div class="left-box">
+										<div class="main">
+											<div class="box-1"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="clearfix">
+												<div class="box-2"></div>
+												<div class="right">
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+													<div class="line"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="right-box empty-line"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="window-2 right">
+						<div data-aos="fade-down-left" data-aos-delay="400">
+							<div class="header win-shadow"></div>
+							<div class="win-shadow">
+								<div class="search"></div>
+								<div class="page">
+									<div class="line-1"></div>
+									<div class="line-2"></div>
+									<div class="line-2"></div>
+									<div class="line-2"></div>
+									<div class="line-2"></div>
+									<div class="line-1"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="window-2 left">
+						<div data-aos="fade-up-right" data-aos-delay="600">
+							<div class="header win-shadow"></div>
+							<div class="win-shadow">
+								<div class="search"></div>
+								<div class="page">
+									<div class="menu"></div>
+									<div class="menu"></div>
+									<div class="menu"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade" data-aos-delay="700">
+						<div class="tags right">
+							<div class="page">
+								<div class="header"></div>
+							</div>
+							<div class="shadow"></div>
+						</div>
+					</div>
+					<div data-aos="fade" data-aos-delay="800">
+						<div class="tags left">
+						<div class="page">
+							<div class="header"></div>
+						</div>
+						<div class="shadow"></div>
+					</div>
+					</div>
+					<div data-aos="fade-right" data-aos-delay="400">
+						<div class="pages left win-shadow">
+							<div class="header"></div>
+							<div class="banner"><i class="fa fa-camera-retro"></i></div>
+							<div class="menu"></div>
+							<div class="list clearfix">
+								<div class="item"></div>
+								<div class="item"></div>
+								<div class="item"></div>
+							</div>
+							<div class="left-area">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="right-area"></div>
+						</div>
+					</div>
+					<div data-aos="fade-left" data-aos-delay="600">
+						<div class="pages right win-shadow">
+							<div class="header"></div>
+							<div class="banner"><i class="fa fa-camera-retro"></i></div>
+							<div class="menu"></div>
+							<div class="list clearfix">
+								<div class="item"></div>
+								<div class="item"></div>
+								<div class="item"></div>
+							</div>
+							<div class="left-area">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="right-area"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="cases" class="index-frame">
+		<div class="max-wrap clearfix">
+			<div class="frame-txt">
+				<header class="subject"><i class="material-icons">important_devices</i><h1 data-i18n="cases_title_h1">作品集</h1></header>
+				<p class="description" data-i18n="cases_desc">
+          300+ 專案<br>
+          12年遠端經驗<br>
+          職人工匠的態度
+				</p>
+				<a href="cases.html" title="一定要瞧瞧" class="more" data-i18n="btn_check_it_out">一定要瞧瞧<i class="fa fa-angle-right"></i></a>
+			</div>
+			<div class="frame-image">
+				<div class="slogan" data-aos="zoom-out" data-aos-delay="1500" data-i18n="cases_slogan"><span>製作超過&nbsp;<strong>300+</strong>&nbsp;專案</span></div>
+				<div class="window-wrap">
+					<div data-aos="fade-down-right">
+						<div class="win-pages child1">
+							<div class="top">
+								<div class="tabs">
+									<div class="item"></div>
+									<div class="item"></div>
+									<div class="item"></div>
+								</div>
+								<div class="search">
+									<div class="icon"></div>
+									<div class="icon"></div>
+									<div class="bar"></div>
+									<div class="icon"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+							<div class="page-1 page-box clearfix">
+								<div class="header">
+									<div class="left box"></div>
+									<div class="right box"></div>
+								</div>
+								<div class="main clearfix">
+									<div class="left-wrap">
+										<div class="text">
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line last"></div>
+										</div>
+										<div class="video"></div>
+										<div class="item clearfix">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+										<div class="item clearfix">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+										<div class="item clearfix">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+									</div>
+									<div class="right-wrap">
+										<div class="item">
+											<div class="img"></div>
+											<div class="text">
+												<div class="title"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="img"></div>
+											<div class="text">
+												<div class="title"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="img"></div>
+											<div class="text">
+												<div class="title"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="img"></div>
+											<div class="text">
+												<div class="title"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="img"></div>
+											<div class="text">
+												<div class="title"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="img"></div>
+											<div class="text">
+												<div class="title"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line last"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-down" data-aos-delay="200">
+						<div class="win-pages child2">
+							<div class="top">
+								<div class="tabs">
+									<div class="item"></div>
+									<div class="item"></div>
+									<div class="item"></div>
+								</div>
+								<div class="search">
+									<div class="icon"></div>
+									<div class="icon"></div>
+									<div class="bar"></div>
+									<div class="icon"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+							<div class="page-2 page-box clearfix">
+								<div class="main">
+									<div class="header">
+										<div class="pic">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="login">
+											<div class="box"></div>
+											<div class="box"></div>
+											<div class="button"></div>
+										</div>
+									</div>
+									<div class="banner">
+										<div class="item"></div>
+										<div class="item"></div>
+										<div class="item"></div>
+									</div>
+									<div class="page">
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+										<div class="box">
+											<div class="img"></div>
+											<div class="text">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+										</div>
+									</div>
+									<div class="footer">
+										<div class="box">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="box">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="box">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="box">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="box">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-down" data-aos-delay="300">
+						<div class="win-pages child3">
+							<div class="top">
+								<div class="tabs">
+									<div class="item"></div>
+									<div class="item"></div>
+									<div class="item"></div>
+								</div>
+								<div class="search">
+									<div class="icon"></div>
+									<div class="icon"></div>
+									<div class="bar"></div>
+									<div class="icon"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+							<div class="page-3 page-box clearfix">
+								<div class="header">
+									<div class="logo"></div>
+									<div class="login">
+										<div class="box"></div>
+										<div class="box"></div>
+										<div class="button"></div>
+									</div>
+								</div>
+								<div class="page">
+									<div class="main">
+										<div class="banner">
+											<div class="search"></div>
+											<div class="button"></div>
+										</div>
+										<div class="links">
+											<div class="item"></div>
+											<div class="item"></div>
+											<div class="item"></div>
+											<div class="item"></div>
+											<div class="clearfix"></div>
+											<div class="box-wrap">
+												<div class="left">
+													<div class="box one"></div>
+													<div class="box two"></div>
+												</div>
+												<div class="left">
+													<div class="box three"></div>
+													<div class="box four"></div>
+													<div class="clearfix"></div>
+													<div class="box five"></div>
+												</div>
+												<div class="box six"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-down-left" data-aos-delay="400">
+						<div class="win-pages child4">
+							<div class="top">
+								<div class="tabs">
+									<div class="item"></div>
+									<div class="item"></div>
+									<div class="item"></div>
+								</div>
+								<div class="search">
+									<div class="icon"></div>
+									<div class="icon"></div>
+									<div class="bar"></div>
+									<div class="icon"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+							<div class="page-4 page-box clearfix">
+								<div class="header">
+									<div class="img"></div>
+									<div class="text">
+										<div class="title"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="main clearfix">
+									<div class="item blue"></div>
+									<div class="item red"></div>
+									<div class="item yellow mr0"></div>
+									<div class="item yellow"></div>
+									<div class="item red"></div>
+									<div class="item blue mr0"></div>
+								</div>
+								<div class="footer">
+									<div class="item">
+										<div class="title"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+									<div class="item">
+										<div class="title"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+									<div class="item">
+										<div class="title"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-up-right" data-aos-delay="500">
+						<div class="win-pages child5">
+							<div class="top">
+								<div class="tabs">
+									<div class="item"></div>
+									<div class="item"></div>
+									<div class="item"></div>
+								</div>
+								<div class="search">
+									<div class="icon"></div>
+									<div class="icon"></div>
+									<div class="bar"></div>
+									<div class="icon"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+							<div class="page-5 page-box clearfix">
+								<div class="header">
+									<div class="logo"></div>
+									<div class="nav">
+										<div class="box"></div>
+										<div class="box"></div>
+										<div class="box"></div>
+										<div class="box"></div>
+										<div class="box"></div>
+										<div class="box"></div>
+									</div>
+								</div>
+								<div class="main clearfix">
+									<div class="left-wrap">
+										<div class="img-one"></div>
+										<div class="line one"></div>
+										<div class="line two"></div>
+										<div class="line two"></div>
+										<div class="line two w40"></div>
+										<div class="clearfix">
+											<div class="img-two"></div>
+											<div class="right">
+												<div class="title"></div>
+												<div class="line one"></div>
+												<div class="line two"></div>
+											</div>
+										</div>
+										<div class="line two"></div>
+										<div class="line two"></div>
+										<div class="line two w40"></div>
+										<div class="img-three"></div>
+										<div class="line one"></div>
+										<div class="line two"></div>
+										<div class="line two"></div>
+										<div class="line two w40"></div>
+									</div>
+									<div class="right-wrap">
+										<div class="item">
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line w10"></div>
+										</div>
+										<div class="item">
+											<div class="title w15"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line w10"></div>
+											<div class="line w10"></div>
+										</div>
+										<div class="item">
+											<div class="title w20"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line w10"></div>
+										</div>
+										<div class="item">
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line w10"></div>
+											<div class="line"></div>
+											<div class="line w10"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-up" data-aos-delay="800">
+						<div class="win-pages child6">
+							<div class="top">
+								<div class="tabs">
+									<div class="item"></div>
+									<div class="item"></div>
+									<div class="item"></div>
+								</div>
+								<div class="search">
+									<div class="icon"></div>
+									<div class="icon"></div>
+									<div class="bar"></div>
+									<div class="icon"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+							<div class="page-6 page-box clearfix">
+								<div class="main">
+									<div class="header">
+										<div class="logo"></div>
+										<div class="login">
+											<div class="box"></div>
+											<div class="box"></div>
+											<div class="button"></div>
+										</div>
+									</div>
+									<div class="nav">
+										<div class="link"></div>
+										<div class="link current"></div>
+										<div class="link"></div>
+										<div class="link"></div>
+										<div class="link"></div>
+									</div>
+									<div class="banner">
+										<div class="left-area">
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="right-area">
+											<div class="left">
+												<div class="title"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+											</div>
+											<div class="img"></div>
+											<div class="clearfix"></div>
+											<div class="bar"></div>
+										</div>
+									</div>
+									<div class="item-wrap clearfix">
+										<div class="item black">
+											<div class="img"></div>
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="item red">
+											<div class="img"></div>
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="item yellow">
+											<div class="img"></div>
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+									</div>
+									<div class="footer">
+										<div class="item">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="item">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="item">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="item">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-up" data-aos-delay="700">
+						<div class="win-pages child7">
+							<div class="top">
+								<div class="tabs">
+									<div class="item"></div>
+									<div class="item"></div>
+									<div class="item"></div>
+								</div>
+								<div class="search">
+									<div class="icon"></div>
+									<div class="icon"></div>
+									<div class="bar"></div>
+									<div class="icon"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+							<div class="page-7 page-box clearfix">
+								<div class="nav">
+									<div class="link"></div>
+									<div class="link current"></div>
+									<div class="link"></div>
+									<div class="link"></div>
+									<div class="link"></div>
+								</div>
+								<div class="banner">
+									<div class="login">
+										<div class="title"></div>
+										<div class="box"></div>
+										<div class="box"></div>
+										<div class="button"></div>
+									</div>
+									<div class="right">
+										<div class="subject"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="main">
+									<div class="top-area">
+										<div class="subject"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+									<div class="item-wrap clearfix">
+										<div class="item">
+											<div class="img"></div>
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="item">
+											<div class="img"></div>
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="item">
+											<div class="img"></div>
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+									</div>
+								</div>
+								<div class="footer">
+									<div class="box copy"></div>
+									<div class="box"></div>
+									<div class="box"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-up-left" data-aos-delay="600">
+						<div class="win-pages child8">
+							<div class="top">
+								<div class="tabs">
+									<div class="item"></div>
+									<div class="item"></div>
+									<div class="item"></div>
+								</div>
+								<div class="search">
+									<div class="icon"></div>
+									<div class="icon"></div>
+									<div class="bar"></div>
+									<div class="icon"></div>
+									<div class="icon"></div>
+								</div>
+							</div>
+							<div class="page-8 page-box clearfix">
+								<div class="search-bar">
+									<div class="box"></div>
+									<div class="button"></div>
+								</div>
+								<div class="link-wrap">
+									<div class="link"></div>
+									<div class="link"></div>
+									<div class="link"></div>
+									<div class="link"></div>
+								</div>
+								<div class="banner clearfix">
+									<div class="aside">
+										<div class="link"></div>
+										<div class="link"></div>
+										<div class="link"></div>
+										<div class="link"></div>
+									</div>
+									<div class="right">
+										<div class="title"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="item-wrap clearfix">
+									<div class="item red">
+										<div class="img">
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="text">
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+									</div>
+									<div class="item blue">
+										<div class="img"></div>
+										<div class="text">
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+									</div>
+									<div class="item yellow">
+										<div class="img"></div>
+										<div class="text">
+											<div class="title"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="blog" class="index-frame">
+		<div class="max-wrap clearfix">
+			<div class="frame-txt">
+				<header class="subject"><i class="material-icons">contact_emergency</i><h1 data-i18n="contact_title_h1">聯絡方式</h1></header>
+				<p class="description"></p>
+				<a href="mailto:fishtoyo@gmail.com" title="fishtoyo@gmail.com" class="more">Gmail<i class="fa fa-angle-right"></i></a>
+        <a href="http://facebook.com/fishtoyo/" title="facebook.com/fishtoyo" target="_blank" class="more">Facebook<i class="fa fa-angle-right"></i></a>
+        <a href="https://www.linkedin.com/in/fishtoyo" title="www.linkedin.com/in/fishtoyo" class="more">Linkedin<i class="fa fa-angle-right"></i></a>
+			</div>
+			<div class="frame-image">
+				<div class="slogan" data-aos="zoom-out" data-aos-delay="1400" data-i18n="contact_slogan"><span>很高興能見到你</span></div>
+				<div class="window-wrap">
+					<div data-aos="fade-down" data-aos-delay="200">
+						<div class="device-imac">
+							<div class="window-main">
+								<div class="device-view">
+									<div class="header clearfix">
+										<div class="left"></div>
+										<div class="right"></div>
+									</div>
+									<div class="banner"></div>
+									<div class="bar"></div>
+									<div class="item-wrap">
+										<div class="text blue">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="text red">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="img"></div>
+									</div>
+								</div>
+							</div>
+							<div class="bottom"></div>
+						</div>
+					</div>
+					<div data-aos="fade-left" data-aos-delay="400">
+						<div class="device-ipad">
+							<div class="device-view">
+								<div class="header clearfix">
+									<div class="left"></div>
+									<div class="right"></div>
+								</div>
+								<div class="banner"></div>
+								<div class="bar"></div>
+								<div class="item-wrap">
+									<div class="text blue">
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+									<div class="text red">
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+									<div class="img"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-up" data-aos-delay="600">
+						<div class="device-ipad phone">
+							<div class="device-view">
+								<div class="header clearfix">
+									<div class="left"></div>
+									<div class="right"></div>
+								</div>
+								<div class="banner"></div>
+								<div class="bar"></div>
+								<div class="item-wrap">
+									<div class="text blue">
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+									<div class="text red">
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+										<div class="line"></div>
+									</div>
+									<div class="img"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-aos="fade-right" data-aos-delay="800">
+						<div class="device-mac">
+							<div class="window-main">
+								<div class="device-view">
+									<div class="header clearfix">
+										<div class="left"></div>
+										<div class="right"></div>
+									</div>
+									<div class="banner"></div>
+									<div class="bar"></div>
+									<div class="item-wrap">
+										<div class="text blue">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="text red">
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+											<div class="line"></div>
+										</div>
+										<div class="img"></div>
+									</div>
+								</div>
+							</div>
+							<div class="bottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer id="footer" data-i18n="footer_copy">
+		Copyright &copy; 2026 Fishtoyo
+	</footer>
+</div>
+
+<!--[if lt IE 9]>
+<script src="assets/js/plugins/jQuery/jquery-1.11.2.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="assets/js/plugins/jQuery/jquery-2.1.3.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/plugins/jQuery/jquery.mobile-1.4.5.custom.min.js"></script>
+<script src="assets/js/plugins/Bootstrap/bootstrap-3.3.2.min.js"></script>
+<script src="assets/js/plugins/jQuery/aos.js"></script>
+<script>
+$(document).ready(function(e) {
+  AOS.init({
+    duration : 800,
+    offset: 150
+  });
+
+  // --- 語系切換邏輯 ---
+  var currentLang = localStorage.getItem('site_lang') || 'zh'; // 預設語系
+  var i18nData = {};
+
+  // 1. 取得 JSON 語系檔
+  $.getJSON('lang.json', function(data) {
+    i18nData = data;
+    setLanguage(currentLang); // 載入完成後初始化文字
+  });
+
+  // 2. 監聽語系切換按鈕
+  $('#lang-btn').on('click', function(e) {
+    e.preventDefault();
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    localStorage.setItem('site_lang', currentLang); // 記住使用者選擇的語系
+    setLanguage(currentLang);
+  });
+
+  // 3. 執行畫面文字替換
+  function setLanguage(lang) {
+    $('html').attr('lang', lang === 'zh' ? 'zh-Hant' : 'en'); // 更新 HTML 語系宣告
+    $('[data-i18n]').each(function() {
+      var key = $(this).attr('data-i18n');
+      if (i18nData[lang] && i18nData[lang][key]) {
+        $(this).html(i18nData[lang][key]);
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>
