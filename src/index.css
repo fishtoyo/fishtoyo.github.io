@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* 擴充 Tailwind 的預設主題 */
+@theme {
+  --font-sans: "Quicksand", sans-serif; /* Barlow, Quicksand */
+}
+
+/* 設定全站的基礎樣式 (Base) */
+@layer base {
+  html {
+    @apply snap-y snap-mandatory scroll-smooth;
+  }
+  body {
+    @apply bg-[#082642] text-slate-200; /* 設定深藍底色，並順便把預設文字換成淺色以維持對比度 */
+  }
+}
+
+@layer components {
+  /* 首頁歡迎大標題 (Welcome) */
+  .hero-title {
+    @apply text-[50px] lg:text-[clamp(32px,calc(8vh+8vw),80px)] font-bold tracking-tight mb-4 lg:mb-[clamp(1rem,3vh,1.5rem)] text-white;
+  }
+
+  /* 區塊大標題 (About, Skills, Works, Archive) */
+  .section-title {
+    @apply text-[32px] lg:text-[clamp(36px,5.5vh,50px)] font-bold mb-6 lg:mb-[clamp(1.5rem,4vh,3rem)] text-white;
+  }
+
+  /* 區塊內容最大寬度與縮放設定 (1580px 以下 80vw，以上固定滿版但最大 1380px) */
+  .content-container {
+    @apply mx-auto w-full md:w-[80vw] md:max-w-full min-[1580px]:w-full min-[1580px]:max-w-[1380px];
+  }
+
+  /* 內容雙欄排版 (左 40%, 右 60%) */
+  .content-grid {
+    @apply grid grid-cols-1 md:grid-cols-[4fr_6fr] gap-8 lg:gap-[clamp(1.5rem,4vh,3rem)];
+  }
+
+  .content-left {
+    @apply text-[20px] lg:text-[clamp(20px,calc(1.5vh+1vw),30px)] font-bold leading-[var(--lh-sm)] md:leading-[var(--lh-md)] lg:leading-[var(--lh-lg)] text-white;
+  }
+
+  .content-right {
+    @apply text-[16px] lg:text-[clamp(16px,2.6vh,24px)] font-bold leading-[var(--lh-sm)] md:leading-[var(--lh-md)] lg:leading-[var(--lh-lg)] max-w-[820px] text-white/80;
+  }
+
+  /* Swiper 輪播客製化樣式 */
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply flex items-center justify-center !w-12 !h-12 bg-[#082642] text-white border border-white/10 rounded-full shadow-xl transition-colors hover:bg-[#0c3862] !mt-[-24px];
+  }
+  .swiper-button-next {
+    @apply !right-6;
+  }
+  .swiper-button-prev {
+    @apply !left-6;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    @apply !text-[20px] !font-bold !text-white;
+  }
+  .swiper-pagination-bullet {
+    @apply !w-[8px] !h-[8px] !rounded-[4px] !bg-white !opacity-40 transition-all duration-300 ease-in-out;
+  }
+  .swiper-pagination-bullet-active {
+    @apply !w-[24px] !bg-[#fff] !opacity-100;
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "header": {
+    "contact": "Contact",
+    "language": "中文"
+  },
+  "welcome": {
+    "title": "Welcome!",
+    "desc": "Hi, I’m Fish. I live in Taichung, Taiwan, and I’ve been working remotely for 12 years now. It’s great to have you here!"
+  },
+  "about": {
+    "title": "About ...",
+    "info": [
+      "39 Years Old",
+      "16 Years of Coding",
+      "12 Years Remote (including)",
+      "300+ Projects"
+    ],
+    "desc": "Hello, I’m Fish, a Frontend Developer with 16 years of experience, based in Taichung, Taiwan—and I’ve been working remotely for the last 12 of them. I’m passionate about translating stunning designs into 1:1 pixel-perfect reality. With over 300 projects under my belt, I’ve mastered the art of building modular components that are not just reusable, but highly scalable down the line.<br /><br />In the future, I hope to contribute my expertise to large-scale projects and help bring complex, high-impact web applications to life."
+  },
+  "skills": {
+    "title": "Core Skills ...",
+    "features": [
+      "Remote Mastery & Autonomy",
+      "Design-to-Code Precision",
+      "Efficient Collaboration"
+    ],
+    "desc": "HTML / CSS / SCSS / RWD / 1:1 Pixel-Perfect / Tailwind CSS / JavaScript / TypeScript / jQuery / GSAP / Vue / React / Figma / Photoshop / Illustrator / Wireframe / UI Design / SEO / Cross-Browser Compatibility / Performance Optimization"
+  },
+  "works": {
+    "title": "Selected Works",
+    "project1Title": "Word Hero",
+    "project1Desc": "Vue, Vite , AI",
+    "project2Title": "Major B2B Project",
+    "project2Desc": "Comprehensive E-commerce Ecosystem",
+    "project2Content": "Website：<a href='https://www.taiwanbm.com.tw' target='_blank' rel='noopener noreferrer' class='text-blue-400 underline hover:text-blue-300 transition-colors'>www.taiwanbm.com.tw</a><br /><br /><strong>Large-Scale System Implementation:</strong><br />Independently architected and developed 150+ unique pages for a complex B2B e-commerce platform, including sophisticated interfaces for user, member, and merchant management.<br /><br /><strong>Modular Architecture:</strong><br />Established a custom SCSS component library within an SSR environment. Applied component-based thinking to maintain strict visual consistency and maximize development efficiency across a massive volume of pages.<br /><br /><strong>Complex UI Challenge (Multi-Level Navigation):</strong><br />Successfully engineered a 5-tier vertical category menu. Collaborated deeply with PMs and engineers to balance intuitive user flow with high-performance information hierarchy.<br /><br /><strong>Performance & SEO Optimization:</strong><br />Managed lightweight JavaScript/jQuery integrations and rich-text editor functionality. Optimized the site’s semantic structure to enhance SEO performance and organic search visibility.<br /><br /><strong>Pixel-Perfect RWD Calibration:</strong><br />Executed meticulous, pixel-level adjustments for 150+ pages to ensure a seamless and high-precision browsing experience across all device screen sizes.",
+    "project3Title": "Industrial Branding Site",
+    "project3Desc": "LCS Auto & Hardware",
+    "project3Content": "Website：<a href='https://www.lcsdevco.com.tw' target='_blank' rel='noopener noreferrer' class='text-blue-400 underline hover:text-blue-300 transition-colors'>www.lcsdevco.com.tw</a><br /><br /><strong>GSAP-Driven Visual Storytelling:</strong><br />Transformed rigid industrial product showcases into a fluid, high-end digital experience. Implemented a vertical scroll-triggered animation for the homepage using GSAP, creating a layered, cinematic entrance that significantly increased user engagement and dwell time.<br /><br /><strong>Seamless Navigation & UX Interaction:</strong><br />Developed an intuitive anchor-point navigation system for product catalogs. This allows clients to jump to specific products with elegant transition effects, adding a layer of sophistication to the rigorous industrial catalog while maintaining ease of use.<br /><br /><strong>Balancing Performance with High-Fidelity Visuals:</strong><br />Optimized GSAP rendering paths to ensure smooth, stutter-free performance even when handling high-resolution industrial imagery. Successfully maintained cross-browser compatibility and rapid loading speeds despite the rich interactive elements.<br /><br /><strong>Precision RWD Layouts:</strong><br />Precisely controlled the presentation of industrial product images and RWD layouts, ensuring that technical specifications remain highly readable and visually impactful across all devices."
+  },
+  "archive": {
+    "title": "Project Archive ...",
+    "desc": "A living archive of over 300+ projects spanning 16 years. This legacy portfolio preserves my original work and coding styles from over a decade ago, documenting my continuous journey in web development.",
+    "btn": "Explore the 300+ Project Archive →"
+  }
+}
