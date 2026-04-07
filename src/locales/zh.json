@@ -5,40 +5,31 @@
   },
   "welcome": {
     "title": "歡迎！",
-    "desc": "嗨, 我是 Fish，目前住在台中。<br />已經遠端工作 12 年了。<br />很高興你來逛逛！"
+    "desc": "嗨, 我是 Fish，<br class='md:hidden' />目前住在台中。<br />已經遠端工作 12 年了。<br />很高興你來逛逛！"
   },
   "about": {
-    "title": "關於我 ...",
+    "title": "關於我",
     "info": [
-      "39 歲",
-      "16 年程式開發經驗",
+      "16 年前端開發經驗",
       "12 年遠端工作經驗",
       "300+ 專案"
     ],
-    "desc": "你好，我是 Fish，已有 16 年的網頁開發經驗，其中包含 12 年皆為遠端工作。我熱衷於將令人驚豔的設計 1:1 完美轉化為程式碼。累積至今參與 300+ 專案開發，並擅長建立模組化元件，讓元件不僅可重複使用，更能在未來具備高度的擴充及維護性。<br /><br />未來的目標，希望能將我的專業技能貢獻於大型專案，協助打造複雜且具高影響力的平台。"
+    "desc": "你好，我是 Fish，已投入前端開發 16 年，其中包含 12 年皆為遠端模式，累積至今參與 300+ 專案開發。我熱衷於將令人驚豔的設計 1:1 完美轉化為程式碼，也擅長模組化元件，減少重複性的工作並能擴充及後續維護，對於細節敏銳，能交付最好品質的專案。<br /><br />未來的目標，希望能將我的專業技能貢獻於大型專案，協助打造複雜且具高影響力的平台。"
   },
   "skills": {
-    "title": "核心技能 ...",
+    "title": "核心技能",
     "features": [
-      "遠端工作與自主管理",
-      "1:1 設計還原",
-      "高效協作"
+      "值得信任",
+      "細心負責",
+      "遠端自主管理"
     ],
     "desc": "HTML / CSS / SCSS / RWD / 1:1 Pixel-Perfect / jQuery / Tailwind CSS / JavaScript / TypeScript / GSAP / Vue / React / Figma / Photoshop / Illustrator / Wireframe / UI Design / SEO / 跨瀏覽器相容性 / 效能優化"
   },
   "works": {
-    "title": "精選作品",
-    "project1Title": "英文單字學習平台",
-    "project1Desc": "Vue, Vite , AI協作",
-    "project2Title": "大型 B2B 專案實績",
-    "project2Desc": "台灣商業媒合平台",
-    "project2Content": "線上網址：<a href='https://www.taiwanbm.com.tw' target='_blank' rel='noopener noreferrer' class='text-blue-400 underline hover:text-blue-300 transition-colors'>www.taiwanbm.com.tw</a><br /><br />於 2024 年獨自操刀超過 150 頁規模的大型 B2B 電商系統。在高度複雜度的使用者、會員及商家管理介面中，展現了表單邏輯整合與 UI 實作能力。<br /><br /><strong>技術架構與模組化</strong><br />採用 HTML5 / CSS3 (SSR 架構) 為核心，並自定義 SCSS 模組化元件庫。透過組件化思維，在面對龐大頁面量時仍能維持一致的視覺規範，並大幅提升開發效率與後續維護的便利性。<br /><br /><strong>高複雜度介面挑戰</strong><br />成功克服 「五層垂直分類主選單」 的實作難題。在確保導覽結構清晰的前提下，與企劃及工程師深度溝通，規劃出兼具操作直覺與效能的選單功能，完美呈現龐大的資訊階層。<br /><br /><strong>效能與搜尋優化</strong><br />精準管理 JavaScript / jQuery 輕量化套件，整合文字編輯器功能，並針對全站進行 SEO 關鍵字結構優化。<br /><br /><strong>極致 RWD 校正：</strong><br />針對不同裝置尺寸進行像素級的仔細校正，確保在 150 頁的繁雜資訊下，用戶在任何載具皆能獲得最精準、流暢的瀏覽體驗。",
-    "project3Title": "企業形象官網",
-    "project3Desc": "工業產品形象網站",
-    "project3Content": "線上網址：<a href='https://www.lcsdevco.com.tw' target='_blank' rel='noopener noreferrer' class='text-blue-400 underline hover:text-blue-300 transition-colors'>www.lcsdevco.com.tw</a><br /><br />於 2025 年末製作，精準控制工業產品影像的呈現與 RWD 佈局，確保型錄資訊在各種裝置上皆具備極佳的讀取性與載入速度。在這個專案中，我運用了大量的 GSAP (GreenSock Animation Platform) 技術，將剛硬的工業產品轉化為具備高質感與流動感的數位體驗。<br /><br /><strong>GSAP 驅動的動態交互（抓住眼球）</strong><br />首頁產品區實作垂直式動態圖文切換效果，透過 GSAP 精準控制捲動節奏，創造出層次分明的進場動態，成功提高使用者的停留時間與下滑意願，將傳統的工業產品介紹轉化為震撼的視覺敘事。<br /><br /><strong>導覽體驗優化（增加互動感）</strong><br />在產品介紹頁面中，規劃了產品項目錨點定位，讓客戶能根據需求快速跳轉至目標產品，並在定位過程中維持優雅的過場視覺，在提升操作便利性的同時，也為嚴謹的工業型錄增添了細膩的互動感。<br /><br /><strong>性能與視覺的平衡</strong><br />雖然使用了大量的動態效果，但我針對 GSAP 的渲染路徑進行了優化，確保在呈現高解析度工業影像時，依然能維持極佳的流暢度與跨瀏覽器相容性。"
+    "title": "精選作品"
   },
   "archive": {
-    "title": "作品總覽 ...",
+    "title": "作品總覽",
     "desc": "這是早期用來存放作品清單的平台，<br />保存了十多年前最初的作品與風格，並在這16年的日子裡持續更新。<br />也象徵著我在網頁開發領域成長的旅程。",
     "btn": "前往 300+ 作品清單 →"
   }

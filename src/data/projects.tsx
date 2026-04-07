@@ -1,13 +1,34 @@
 import React from 'react';
+import { project01 } from './projects/project01';
+import { project02 } from './projects/project02';
+import { project03 } from './projects/project03';
+// import { project04 } from './projects/project04';
 
-// 定義專案支援的三種模式
-export type ProjectMode = 'link' | 'case-study' | 'code-demo';
+// 定義專案支援的兩種模式
+export type ProjectMode = 'case-study' | 'code-demo';
+
+export interface ProjectTranslations {
+  title: string;
+  desc: string;
+  content?: string; // 模式 2 或 3 專用：詳細內容的 HTML 結構
+}
+
+export interface ProjectSlide {
+  media: string; // 圖片或 .mp4 影片網址
+  desc?: {       // 輪播下方顯示的簡短描述
+    en: string;
+    zh: string;
+  };
+}
 
 export interface ProjectItem {
   id: number;
   mode: ProjectMode;
-  url?: string; // 模式 1 專用：外部連結
-  caseStudyMedia?: string[]; // 模式 2 專用：圖文輪播的媒體 (圖片或影片網址)
+  coverImage: string; // 列表顯示的封面路徑 (支援圖片或 .mp4 影片)
+  link?: string; // 選擇性：若有值，則會在列表中多顯示「前往網站」按鈕
+  caseStudyList?: ProjectSlide[]; // 模式 2 專用：圖文輪播的媒體與描述列表
+  caseStudyBg?: string; // 模式 2 專用：右側輪播區塊的自訂背景 (支援顏色代碼或 CSS background 語法)
+  caseStudyRightBg?: string; // 模式 2 專用：右側輪播區塊的獨立背景
   codeDemo?: {  // 模式 3 專用：程式碼實作資料
     html?: string;
     css?: string;
@@ -15,37 +36,16 @@ export interface ProjectItem {
     vue?: string;
   };
   demoComponent?: React.ReactNode; // 模式 3 專用：真實要渲染的 React 實作元件
+  translations: {
+    en: ProjectTranslations;
+    zh: ProjectTranslations;
+  };
 }
 
 // 定義專案列表與模式
 export const worksList: ProjectItem[] = [
-  { 
-    id: 1, 
-    mode: 'link', 
-    url: 'https://www.wordhero.tw' 
-  },
-  { 
-    id: 2, 
-    mode: 'case-study',
-    // 直接在這裡放入媒體陣列，支援 .mp4 影片與圖片混搭 '/archive/assets/images/video/demo.mp4'
-    caseStudyMedia: ['/archive/assets/images/works/02.png']
-  },
-  { 
-    id: 3, 
-    mode: 'case-study',
-    caseStudyMedia: ['/archive/assets/images/works/03.png']
-  },
-  // { 
-  //   id: 3, 
-  //   mode: 'code-demo',
-  //   codeDemo: {
-  //     html: `<button class="demo-btn">\n  資料準備中\n</button>`,
-  //     css: `.demo-btn {\n  background-color: #082642;\n  color: #ffffff;\n  padding: 12px 24px;\n  border-radius: 8px;\n  border: none;\n  font-weight: bold;\n}`
-  //   },
-  //   demoComponent: (
-  //     <button className="bg-[#082642] text-white px-6 py-3 rounded-lg font-bold shadow-md cursor-not-allowed opacity-80">
-  //       資料準備中
-  //     </button>
-  //   )
-  // }
+  project01,
+  project02,
+  project03
+  // project04
 ];

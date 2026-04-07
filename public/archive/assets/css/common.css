@@ -893,7 +893,10 @@ body.color-5 #blog { background-color: #86eac4; }
 @media screen and (max-width:400px) {
    #banner { height: 400px; }
    #banner .author { top: -100px; }
-   #banner .box-wrap { padding: 100px 0 0; }
+   #banner .box-wrap { top: 58%; padding: 40px 0 0; }
+   #banner .box-wrap .subject { padding-top: 20px;}
+   #banner .box-wrap .subject h1 { font-size: 32px;}
+   #banner .box-wrap .subject span { font-size: 22px; }
    .frame-txt .subject h1 { font-size: .8em; }
    .frame-txt .description { font-size: 1em; }
 }

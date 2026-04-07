@@ -25,10 +25,22 @@
   .section-title {
     @apply text-[32px] lg:text-[clamp(36px,5.5vh,50px)] font-bold mb-6 lg:mb-[clamp(1.5rem,4vh,3rem)] text-white;
   }
+  
+  /* 使用 CSS Box Shadow 產生標題後方的三個點點，避免影響 SEO 結構 */
+  .section-title span::after {
+    content: "";
+    @apply inline-block w-[0.15em] h-[0.15em] bg-current rounded-full ml-[0.2em] mr-[0.6em];
+    box-shadow: 0.25em 0 0 currentcolor, 0.5em 0 0 currentcolor;
+  }
 
   /* 區塊內容最大寬度與縮放設定 (1580px 以下 80vw，以上固定滿版但最大 1380px) */
   .content-container {
-    @apply mx-auto w-full md:w-[80vw] md:max-w-full min-[1580px]:w-full min-[1580px]:max-w-[1380px];
+    @apply mx-auto w-full md:w-[80vw] md:max-w-full min-[1580px]:w-full min-[1580px]:max-w-345;
+  }
+
+  /* 各個區塊最外層共用的 Wrapper 樣式 */
+  .content-wrapper {
+    @apply relative z-1 min-h-[calc(100vh-20px)] min-[744px]:min-h-[calc(100vh-80px)] lg:min-h-0 lg:h-[calc(100vh-80px)] w-[calc(100%-20px)] min-[744px]:w-[calc(100%-80px)] mx-auto my-2.5 min-[744px]:my-10 rounded-[10px] flex flex-col justify-center p-6 py-20 md:p-12 md:pt-12 lg:p-[clamp(2rem,5vh,6rem)] lg:pt-[clamp(2rem,5vh,6rem)] overflow-hidden shadow-2xl snap-start scroll-mt-2.5 min-[744px]:scroll-mt-10;
   }
 
   /* 內容雙欄排版 (左 40%, 右 60%) */
@@ -37,32 +49,32 @@
   }
 
   .content-left {
-    @apply text-[20px] lg:text-[clamp(20px,calc(1.5vh+1vw),30px)] font-bold leading-[var(--lh-sm)] md:leading-[var(--lh-md)] lg:leading-[var(--lh-lg)] text-white;
+    @apply text-[20px] lg:text-[clamp(20px,calc(1.5vh+1vw),30px)] font-bold leading-(--lh-sm) md:leading-(--lh-md) lg:leading-(--lh-lg) text-white;
   }
 
   .content-right {
-    @apply text-[16px] lg:text-[clamp(16px,2.6vh,24px)] font-bold leading-[var(--lh-sm)] md:leading-[var(--lh-md)] lg:leading-[var(--lh-lg)] max-w-[820px] text-white/80;
+    @apply text-[16px] lg:text-[clamp(16px,2.6vh,24px)] font-bold leading-(--lh-sm) md:leading-(--lh-md) lg:leading-(--lh-lg) max-w-205 text-white/80;
   }
 
   /* Swiper 輪播客製化樣式 */
   .swiper-button-next,
   .swiper-button-prev {
-    @apply flex items-center justify-center !w-12 !h-12 bg-[#082642] text-white border border-white/10 rounded-full shadow-xl transition-colors hover:bg-[#0c3862] !mt-[-24px];
+    @apply flex items-center justify-center w-12! h-12! bg-[#082642] text-white border border-white/10 rounded-full shadow-xl transition-colors hover:bg-[#0c3862] -mt-6!;
   }
   .swiper-button-next {
-    @apply !right-6;
+    @apply right-6!;
   }
   .swiper-button-prev {
-    @apply !left-6;
+    @apply left-6!;
   }
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    @apply !text-[20px] !font-bold !text-white;
+    @apply text-[20px]! font-bold! text-white!;
   }
   .swiper-pagination-bullet {
-    @apply !w-[8px] !h-[8px] !rounded-[4px] !bg-white !opacity-40 transition-all duration-300 ease-in-out;
+    @apply w-2! h-2! rounded-sm! bg-white! opacity-40! transition-all duration-300 ease-in-out;
   }
   .swiper-pagination-bullet-active {
-    @apply !w-[24px] !bg-[#fff] !opacity-100;
+    @apply w-6! bg-white! opacity-100!;
   }
 }
