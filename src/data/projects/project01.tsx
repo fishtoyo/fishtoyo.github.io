@@ -10,14 +10,14 @@ export const project01: ProjectItem = {
       media: '/assets/videos/project01.mp4',
       desc: {
         en: 'Vocabulary challenge interface',
-        zh: '雙風格切換畫面'
+        zh: '雙風格的畫面切換'
       }
     },
     {
       media: '/assets/works/01.png',
       desc: {
         en: 'Product catalog scrolling effect',
-        zh: '單字測驗畫面'
+        zh: '首頁單字測驗'
       }
     }
   ],

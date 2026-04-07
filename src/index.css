@@ -3,6 +3,7 @@
 /* 擴充 Tailwind 的預設主題 */
 @theme {
   --font-sans: "Quicksand", sans-serif; /* Barlow, Quicksand */
+  --breakpoint-xlg: 92.5625rem; /* 1481px / 16px，確保與原生 md, lg 使用相同單位才能正確排序 */
 }
 
 /* 設定全站的基礎樣式 (Base) */
@@ -40,7 +41,7 @@
 
   /* 各個區塊最外層共用的 Wrapper 樣式 */
   .content-wrapper {
-    @apply relative z-1 min-h-[calc(100vh-20px)] min-[744px]:min-h-[calc(100vh-80px)] lg:min-h-0 lg:h-[calc(100vh-80px)] w-[calc(100%-20px)] min-[744px]:w-[calc(100%-80px)] mx-auto my-2.5 min-[744px]:my-10 rounded-[10px] flex flex-col justify-center p-6 py-20 md:p-12 md:pt-12 lg:p-[clamp(2rem,5vh,6rem)] lg:pt-[clamp(2rem,5vh,6rem)] overflow-hidden shadow-2xl snap-start scroll-mt-2.5 min-[744px]:scroll-mt-10;
+    @apply relative z-1 min-h-[calc(100vh-20px)] min-[744px]:min-h-[calc(100vh-80px)] lg:min-h-0 lg:h-[calc(100vh-80px)] w-[calc(100%-20px)] min-[744px]:w-[calc(100%-80px)] mx-auto my-2.5 min-[744px]:my-10 rounded-[10px] flex flex-col justify-center p-6 py-20 md:p-12 md:pt-12 lg:p-[clamp(2rem,5vh,6rem)] lg:pt-[clamp(2rem,5vh,6rem)] overflow-hidden shadow-2xl snap-center;
   }
 
   /* 內容雙欄排版 (左 40%, 右 60%) */
