@@ -4,8 +4,6 @@ import cases from '../data/cases.json'
 interface CaseItem {
   id: string
   title: string
-  url: string
-  cls: string // 'none'：網站已下線，只展示不連結
 }
 
 type Lang = 'en' | 'zh'
@@ -19,8 +17,6 @@ const TEXT = {
     search: 'Search projects',
     empty: 'No matching projects.',
     confidential: 'Confidential',
-    offline: 'Offline',
-    visit: 'Visit',
   },
   zh: {
     back: '回履歷',
@@ -30,51 +26,34 @@ const TEXT = {
     search: '搜尋作品名稱',
     empty: '找不到符合的作品。',
     confidential: '暫不公開',
-    offline: '已下線',
-    visit: '前往網站',
   },
 } as const
 
+// 打包時已移除網址（見 vite.config.ts 的 stripCaseUrls），這裡只拿得到編號與名稱
 const list = cases as CaseItem[]
 const isConfidential = (c: CaseItem) => c.title === '暫不公開'
-const isLinkable = (c: CaseItem) => c.url !== '#' && c.cls !== 'none'
 
+// 只展示截圖與名稱，不提供任何連結
 function CaseCard({ item, lang }: { item: CaseItem; lang: Lang }) {
-  const t = TEXT[lang]
-  const linkable = isLinkable(item)
-  const title = isConfidential(item) ? t.confidential : item.title
-  const Wrapper = linkable ? 'a' : 'div'
-  const status = isConfidential(item) ? null : !linkable ? t.offline : null
+  const title = isConfidential(item) ? TEXT[lang].confidential : item.title
 
   return (
-    <Wrapper
-      {...(linkable ? { href: item.url, target: '_blank', rel: 'noopener noreferrer', title: `${title} — ${t.visit}` } : {})}
-      className={`group block ${linkable ? 'cursor-pointer' : 'cursor-default'}`}
-    >
+    <div className="block">
       <div className="relative aspect-4/3 bg-white rounded-lg overflow-hidden shadow-[2px_2px_5px_rgba(0,0,0,0.1)] mb-3">
         <img
           src={`/assets/cases/${item.id}.png`}
           alt={title}
           loading="lazy"
-          className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ${linkable ? 'group-hover:scale-105' : ''}`}
+          draggable={false}
+          className="absolute inset-0 w-full h-full object-cover"
           onError={(e) => { e.currentTarget.src = '/assets/cases/default.png' }}
         />
-        {linkable && (
-          <div className="absolute top-3 right-3 w-9 h-9 bg-[#009BD0]/80 backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white shadow-lg pointer-events-none">
-            <span className="material-symbols-outlined text-[18px]!">open_in_new</span>
-          </div>
-        )}
-        {status && (
-          <span className="absolute left-3 top-3 px-2.5 py-0.5 rounded-full bg-[#082642]/70 text-white/90 text-[12px] font-bold backdrop-blur">
-            {status}
-          </span>
-        )}
       </div>
       <div className="px-1">
         <p className="font-bold text-[13px] text-white/50 tabular-nums">No.{item.id}</p>
         <h2 className="mt-0.5 text-[16px] font-bold text-white leading-snug line-clamp-1" title={title}>{title}</h2>
       </div>
-    </Wrapper>
+    </div>
   )
 }
 

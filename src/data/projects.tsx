@@ -25,7 +25,7 @@ export interface ProjectItem {
   id: number;
   mode: ProjectMode;
   coverImage: string; // 列表顯示的封面路徑 (支援圖片或 .mp4 影片)
-  link?: string; // 選擇性：若有值，則會在列表中多顯示「前往網站」按鈕
+  link?: string; // 只作紀錄，網站上不顯示也不連結
   caseStudyList?: ProjectSlide[]; // 模式 2 專用：圖文輪播的媒體與描述列表
   caseStudyBg?: string; // 模式 2 專用：右側輪播區塊的自訂背景 (支援顏色代碼或 CSS background 語法)
   caseStudyRightBg?: string; // 模式 2 專用：右側輪播區塊的獨立背景

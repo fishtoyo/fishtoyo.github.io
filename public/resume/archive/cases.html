@@ -82,11 +82,9 @@ $(document).ready(function(e) {
     $sliderList.empty();
     
     var htmlContent = data.map(function(item) {
-      var className = item.cls ? ' class="' + item.cls + '"' : '';
-      var target = (item.url && item.url !== '#') ? ' target="_blank"' : '';
-      
+      // 只展示截圖與名稱，不連到任何網站（原始網址保留在 src/data/cases.json，不公開）
       return '<div class="box">' +
-              '<a href="' + item.url + '" title="' + item.title + '"' + target + className + '>' +
+              '<a href="javascript:void(0);" title="' + item.title + '" class="none">' +
                 '<span class="img"><img src="assets/images/cases/' + item.id + '.png" alt="' + item.title + '"></span>' +
                 '<span class="main">' +
                   '<span class="num">' + item.id + '</span>' +

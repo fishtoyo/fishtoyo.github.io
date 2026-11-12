@@ -103,21 +103,8 @@ export const WorksSection = ({
                 </div>
               </div>
               <div className="px-2.5">
-                <div className="flex items-center gap-2.5 mb-1.5">
-                  <h3 className="text-[20px] lg:text-[22px] font-bold text-white">{work.translations[lang].title}</h3>
-                  {work.link && (
-                    <a
-                      href={work.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="shrink-0 flex items-center justify-center gap-1 mt-0.5 px-2 py-0.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded transition-colors text-white text-[12px] font-medium cursor-pointer"
-                      title={lang === 'en' ? 'Visit Website' : '前往網站'}
-                    >
-                      <span className="material-symbols-outlined text-[14px]!">open_in_new</span>
-                      <span>{lang === 'en' ? 'Visit Website' : '前往網站'}</span>
-                    </a>
-                  )}
-                </div>
+                {/* 作品一律不提供外部連結 */}
+                <h3 className="mb-1.5 text-[20px] lg:text-[22px] font-bold text-white">{work.translations[lang].title}</h3>
                 <p className="line-clamp-2 text-[14px] lg:text-[15px] font-medium text-white/70 leading-relaxed">
                   {work.translations[lang].desc.length > 150 ? work.translations[lang].desc.substring(0, 150) + '...' : work.translations[lang].desc}
                 </p>
