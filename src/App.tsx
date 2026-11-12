@@ -5,6 +5,11 @@ import zh from './locales/zh.json'
 import { worksList, type ProjectItem } from './data/projects'
 import { ContactModal } from './components/ContactModal'
 import { ProjectModal } from './components/ProjectModal'
+import { WelcomeSection } from './components/sections/WelcomeSection'
+import { AboutSection } from './components/sections/AboutSection'
+import { SkillsSection } from './components/sections/SkillsSection'
+import { WorksSection, type WorksCategory } from './components/sections/WorksSection'
+import { ArchiveSection } from './components/sections/ArchiveSection'
 
 // 純 CSS 實作的 Scroll 浮動滑鼠圖示
 function ScrollMouse({ isLast = false, arrowState }: { isLast?: boolean, arrowState: { scale: number, rotate: number } }) {
@@ -67,7 +72,8 @@ function App() {
     const params = new URLSearchParams(window.location.search);
     return params.get('lang') === 'zh' ? 'zh' : 'en';
   });
-  const [isMobile, setIsMobile] = useState(false); // 新增：判斷是否為無游標(觸控)設備
+  // 判斷是否為無游標(觸控)設備
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.matchMedia('(hover: none)').matches : false);
   const [isContactOpen, setIsContactOpen] = useState(false)
   const worksRef = useRef<HTMLDivElement>(null)
   
@@ -78,6 +84,9 @@ function App() {
 
   // 管理彈出視窗狀態
   const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
+
+  // 作品分類篩選
+  const [filterCategory, setFilterCategory] = useState<WorksCategory>('all');
 
   // 橫向捲軸拖曳狀態
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -92,17 +101,15 @@ function App() {
   // 偵測是否為觸控設備 (無 hover 行為)
   useEffect(() => {
     const mql = window.matchMedia('(hover: none)');
-    setIsMobile(mql.matches); // 初始化判斷
     const handleMatchChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mql.addEventListener('change', handleMatchChange);
     return () => mql.removeEventListener('change', handleMatchChange);
-  }, []);
+  }, [setIsMobile]);
 
   // 監聽排版切換，觸發「放大再轉向」的連續動畫
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
-      setArrowState({ scale: 1, rotate: isHorizontal ? -90 : 0 });
       return;
     }
     let isCancelled = false;
@@ -181,7 +188,7 @@ function App() {
       window.removeEventListener('wheel', handleWheel);
       if (wheelTimeout.current) clearTimeout(wheelTimeout.current);
     };
-  }, [isHorizontal]);
+  }, [isHorizontal, setArrowState]);
 
   // 監聽全域網頁滾動
   useEffect(() => {
@@ -228,7 +235,7 @@ function App() {
       if (currentRef) currentRef.removeEventListener('scroll', checkScroll);
       window.removeEventListener('resize', checkScroll);
     };
-  }, []);
+  }, [filterCategory]); // 切換分類後作品數量改變，需重新計算捲軸
 
   // 當語系切換時，同步更新網址列的參數，這樣複製網址分享時也能保有語系狀態
   useEffect(() => {
@@ -287,6 +294,20 @@ function App() {
   // 處理點擊專案卡片
   const handleProjectClick = (project: ProjectItem) => {
     setActiveProject(project);
+  };
+
+  // 依分類篩選作品：精選作品＝case-study、小工具＝code-demo
+  const filteredWorks = worksList.filter((work) => {
+    if (filterCategory === 'all') return true;
+    if (filterCategory === 'websites') return work.mode === 'case-study';
+    if (filterCategory === 'tools') return work.mode === 'code-demo';
+    return true;
+  });
+
+  // 切換分類時，作品列表捲回最前面
+  const handleCategoryChange = (category: WorksCategory) => {
+    setFilterCategory(category);
+    worksRef.current?.scrollTo({ left: 0, behavior: 'smooth' });
   };
 
   // 處理橫式捲軸的拖曳與點擊連動
@@ -378,215 +399,33 @@ function App() {
         
       <main className={`relative z-1 transition-all duration-700 ease-in-out ${isHorizontal ? 'flex flex-row w-max h-screen' : 'flex flex-col w-full'}`}>
         
-        {/* 1. Welcome 區塊 */}
-        <div className={isHorizontal ? "w-screen h-screen shrink-0 flex items-center justify-center" : "w-full"}>
-          <section className="relative z-1 min-h-screen lg:min-h-0 lg:h-screen w-full flex flex-col justify-center p-6 pt-20 pb-45 md:p-12 md:pt-12 lg:p-[clamp(2rem,5vh,6rem)] lg:pt-[clamp(2rem,5vh,6rem)] overflow-hidden snap-center">
-            <div className="content-container">
-              <div className="hero-title">
-                {t.welcome.title}
-              </div>
-              <div className="text-[24px] lg:text-[clamp(20px,4vh,38px)] font-bold leading-(--lh-sm) text-white/80 max-w-300"
-              dangerouslySetInnerHTML={{ __html: t.welcome.desc }} 
-              />
-            </div>
-            
-            {/* Scroll 浮動圖示 (支援橫向轉向) */}
-            <motion.div 
-              onPointerMove={handleScrollPointerMove}
-              onPointerLeave={handleScrollPointerLeave}
-              animate={{ scale: arrowState.scale, rotate: arrowState.rotate }}
-              transition={{ rotate: { duration: 0.4 }, scale: { duration: 0.2 } }}
-              style={{ x: scrollSpringX, y: scrollSpringY }}
-              className="absolute right-7.5 bottom-30 min-[744px]:right-16.25 min-[744px]:bottom-15 w-full max-w-25 min-[744px]:max-w-40 aspect-square bg-[url('/assets/scroll_arrow.png')] bg-cover bg-center bg-no-repeat text-[0px] before:content-[''] before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/assets/scroll.png')] before:bg-cover before:bg-center before:bg-no-repeat before:animate-[spin_8s_linear_infinite] cursor-pointer"
-            >
-              SCROLL DOWN
-            </motion.div>
-          </section>
-        </div>
-
-        {/* 2. About 區塊 */}
-        <div className={isHorizontal ? "w-screen h-screen shrink-0 flex items-center justify-center" : "w-full"}>
-          <section 
-            className="content-wrapper" 
-            style={{ background: 'linear-gradient(111.69deg, #066786 23.19%, #0381AB 40.23%, #28AAD6 59.07%, #009BD0 72.98%)' }}
-          >
-            <div className="content-container">
-              <h2 className="section-title"><span>{t.about.title}</span></h2>
-              <div className="content-grid">
-                <div className="content-left">
-                  <ul className="space-y-2 lg:space-y-[clamp(0.25rem,calc(1vh+2vw),0.5rem)]">
-                    {t.about.info.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div 
-                  className="content-right" 
-                  dangerouslySetInnerHTML={{ __html: t.about.desc }} 
-                />
-              </div>
-            </div>
-          </section>
-        </div>
-
-        {/* 3. Core Skills 區塊 */}
-        <div className={isHorizontal ? "w-screen h-screen shrink-0 flex items-center justify-center" : "w-full"}>
-          <section 
-            className="content-wrapper" 
-            style={{ background: 'linear-gradient(111.25deg, #004965 27.45%, #1C658A 46.05%, #4490BC 61.47%, #3881B0 72.81%)' }}
-          >
-            <div className="content-container">
-              <h2 className="section-title"><span>{t.skills.title}</span></h2>
-              <div className="content-grid">
-                <div className="content-left">
-                  <ul className="space-y-2 lg:space-y-[clamp(0.25rem,1vh,0.5rem)]">
-                    {t.skills.features.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div 
-                  className="content-right" 
-                  dangerouslySetInnerHTML={{ __html: t.skills.desc }} 
-                />
-              </div>
-            </div>
-          </section>
-        </div>
-          
-        {/* 4. Selected Works 區塊 */}
-        <div className={isHorizontal ? "w-screen h-screen shrink-0 flex items-center justify-center" : "w-full"}>
-          <section 
-            className="content-wrapper" 
-            style={{ background: 'linear-gradient(111.25deg, #287E94 27.45%, #1593B3 45.54%, #49C5E4 61.47%, #02A7D1 72.81%)' }}
-          >
-            <div className="content-container">
-              <div className="flex justify-between items-center mb-8 lg:mb-[clamp(1.5rem,3vh,3rem)]">
-                <h2 className="section-title mb-0!"><span>{t.works.title}</span></h2>
-              </div>
-
-              {/* 輪播內容區塊 */}
-              <div 
-                ref={worksRef} 
-                className="flex gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-              >
-                {worksList.map((work) => (
-                  <div key={work.id} className="
-                    shrink-0
-                    snap-start
-                    w-full
-                    md:w-[calc(50%-22px)]
-                    xlg:w-[calc(33%-22px)]
-                  ">
-                    <div 
-                      className="group aspect-640/480 bg-white rounded-lg mb-3 lg:mb-4 shadow-[2px_2px_5px_rgba(0,0,0,0.1)] overflow-hidden transition-colors relative cursor-pointer"
-                      onClick={() => handleProjectClick(work)}
-                      onMouseEnter={(e) => {
-                        if (isMobile) return;
-                        const vid = e.currentTarget.querySelector('video');
-                        if (vid) vid.play().catch(() => {});
-                      }}
-                      onMouseLeave={(e) => {
-                        if (isMobile) return;
-                        const vid = e.currentTarget.querySelector('video');
-                        if (vid) {
-                          vid.pause();
-                          vid.currentTime = 0;
-                        }
-                      }}
-                    >
-                      {work.coverImage.endsWith('.mp4') || work.coverImage.endsWith('.webm') ? (
-                        <video 
-                          src={work.coverImage} 
-                          className="absolute inset-0 w-full h-full object-cover" 
-                          muted loop playsInline
-                        />
-                      ) : (
-                        <img 
-                          src={work.coverImage} 
-                          alt={`Project ${work.id}`} 
-                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                          onError={(e) => { e.currentTarget.src = '/assets/works/default.png'; }}
-                        />
-                      )}
-                      {/* 取消大片遮罩，改用滑入時右上角出現的小圖示作為點擊提示 */}
-                      <div className="absolute top-4 right-4 w-10 h-10 bg-[#009BD0]/80 backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white shadow-lg pointer-events-none">
-                        <span className="material-symbols-outlined text-[20px]">
-                          {work.mode === 'code-demo' ? 'code' : 'visibility'}
-                        </span>
-                      </div>
-                    </div>
-                  <div className="px-2.5">
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <h3 className="text-[20px] lg:text-[22px] font-bold text-white">{work.translations[lang].title}</h3>
-                      {work.link && (
-                        <a 
-                          href={work.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="shrink-0 flex items-center justify-center gap-1 mt-0.5 px-2 py-0.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded transition-colors text-white text-[12px] font-medium cursor-pointer"
-                          title={lang === 'en' ? 'Visit Website' : '前往網站'}
-                        >
-                          <span className="material-symbols-outlined text-[14px]!">open_in_new</span>
-                          <span>{lang === 'en' ? 'Visit Website' : '前往網站'}</span>
-                        </a>
-                      )}
-                    </div>
-                    <p className="line-clamp-2 text-[14px] lg:text-[15px] font-medium text-white/70 leading-relaxed">
-                      {work.translations[lang].desc.length > 150 ? work.translations[lang].desc.substring(0, 150) + '...' : work.translations[lang].desc}
-                    </p>
-                  </div>
-                </div>
-                ))}
-              </div>
-
-              {/* 全裝置共用：自訂橫向拖曳捲軸 */}
-              {worksList.length > 2 && thumbWidthRatio < 1 && (
-                <div 
-                  ref={trackRef}
-                  className="absolute left-1/2 -translate-x-1/2 bottom-6 lg:bottom-10 w-30 h-2 bg-white rounded-full p-0.5 flex items-center touch-none cursor-pointer"
-                  onPointerDown={(e) => {
-                    e.currentTarget.setPointerCapture(e.pointerId); // 鎖定游標避免拖曳時意外滑出範圍
-                    handleScrollDrag(e);
-                  }}
-                  onPointerMove={(e) => {
-                    if (e.buttons > 0) handleScrollDrag(e); // 當點擊(拖曳中)時同步連動
-                  }}
-                >
-                  <div 
-                    className="h-full bg-[#009BD0] rounded-full shadow-sm pointer-events-none"
-                    style={{ 
-                      width: `${thumbWidthRatio * 100}%`,
-                      transform: `translateX(${scrollProgress * ((1 - thumbWidthRatio) * 100 / thumbWidthRatio)}%)`
-                    }}
-                  />
-                </div>
-              )}
-            </div>
-          </section>
-        </div>
-
-        {/* 5. Archive 區塊 */}
-        <div className={isHorizontal ? "w-screen h-screen shrink-0 flex items-center justify-center" : "w-full"}>
-          <section 
-            className="content-wrapper text-white/80" 
-            style={{ background: 'linear-gradient(111.25deg, #286594 27.45%, #157EB3 45.54%, #49B3E4 61.47%, #0293D1 72.81%)' }}
-          >
-            <div className="content-container">
-              <h2 className="section-title"><span>{t.archive.title}</span></h2>
-              <div className="text-[18px] lg:text-[clamp(18px,3vh,24px)] font-bold leading-(--lh-lg) text-white/80 mb-10 lg:mb-[clamp(1.5rem,4vh,2.5rem)]"
-              dangerouslySetInnerHTML={{ __html: t.archive.desc }} 
-              />
-              <a 
-                href="/archive/index.html" 
-                className="inline-block px-4 py-3 lg:py-[clamp(0.75rem,2vh,1rem)] lg:px-[clamp(1.5rem,3vh,2rem)] bg-[#082642] text-white text-[16px] lg:text-[clamp(18px,2.5vh,22px)] font-bold rounded-md hover:bg-[#0c3862] hover:scale-105 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
-              >
-                {t.archive.btn}
-              </a>
-            </div>
-          </section>
-        </div>
-
+        <WelcomeSection
+          isHorizontal={isHorizontal}
+          t={t}
+          handleScrollPointerMove={handleScrollPointerMove}
+          handleScrollPointerLeave={handleScrollPointerLeave}
+          arrowState={arrowState}
+          scrollSpringX={scrollSpringX}
+          scrollSpringY={scrollSpringY}
+        />
+        <AboutSection isHorizontal={isHorizontal} t={t} />
+        <SkillsSection isHorizontal={isHorizontal} t={t} />
+        <WorksSection
+          isHorizontal={isHorizontal}
+          t={t}
+          worksRef={worksRef}
+          filteredWorks={filteredWorks}
+          handleProjectClick={handleProjectClick}
+          isMobile={isMobile}
+          lang={lang}
+          handleCategoryChange={handleCategoryChange}
+          filterCategory={filterCategory}
+          thumbWidthRatio={thumbWidthRatio}
+          trackRef={trackRef}
+          handleScrollDrag={handleScrollDrag}
+          scrollProgress={scrollProgress}
+        />
+        <ArchiveSection isHorizontal={isHorizontal} t={t} />
       </main>
 
       {/* Global Fixed Scroll Mouse */}

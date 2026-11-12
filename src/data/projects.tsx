@@ -2,7 +2,7 @@ import React from 'react';
 import { project01 } from './projects/project01';
 import { project02 } from './projects/project02';
 import { project03 } from './projects/project03';
-// import { project04 } from './projects/project04';
+import { project04 } from './projects/project04';
 
 // 定義專案支援的兩種模式
 export type ProjectMode = 'case-study' | 'code-demo';
@@ -46,6 +46,6 @@ export interface ProjectItem {
 export const worksList: ProjectItem[] = [
   project01,
   project02,
-  project03
-  // project04
+  project03,
+  project04
 ];

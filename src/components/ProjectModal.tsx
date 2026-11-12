@@ -96,11 +96,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, lang, onClo
               {project.caseStudyList.map((slide, index) => (
                 <SwiperSlide key={index} className="box-border pb-2">
                   <div className="w-full flex flex-col items-center justify-center">
-                    <div className="w-full aspect-733/540 flex items-center justify-center rounded-2xl overflow-hidden bg-black/5 transform-gpu">
+                    <div className="w-full aspect-733/540 flex items-center justify-center rounded-2xl overflow-hidden bg-black transform-gpu">
                       {slide.media.endsWith('.mp4') ? (
                           <video src={slide.media} className="w-full h-full object-cover rounded-2xl" autoPlay muted loop playsInline />
                       ) : (
-                          <img src={slide.media} alt={`Case Study Media ${index + 1}`} className="w-full h-full object-cover rounded-2xl block" onError={(e) => { e.currentTarget.src = '/assets/works/300.png'; }} />
+                          <img src={slide.media} alt={`Case Study Media ${index + 1}`} className="w-full h-full object-contain rounded-2xl block" onError={(e) => { e.currentTarget.src = '/assets/works/300.png'; }} />
                       )}
                     </div>
                     {slide.desc && (
@@ -131,10 +131,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, lang, onClo
 
       {project.mode === 'code-demo' && project.codeDemo && (
         <>
-          <div className="w-full lg:w-[50%] h-[50vh] lg:h-full p-8 lg:p-12 flex flex-col bg-[#1e1e1e] border-r border-white/10 order-2 lg:order-1">
+          <div className="w-full lg:w-[50%] h-80 lg:h-full p-6 lg:p-8 flex flex-col bg-[#1e1e1e] border-r border-white/10 order-2 lg:order-1 tracking-normal">
             <div className="flex gap-4 mb-6 overflow-x-auto [&::-webkit-scrollbar]:hidden">
               {Object.keys(project.codeDemo).map((langKey) => (
-              <button key={langKey} onClick={() => setCodeTab(langKey)} className={`px-4 py-2 rounded uppercase text-sm font-bold tracking-wider transition-colors ${codeTab === langKey ? 'bg-blue-600 text-white' : 'bg-white/10 text-white/50 hover:bg-white/20'}`}>
+              <button key={langKey} onClick={() => setCodeTab(langKey)} className={`px-4 py-2 rounded uppercase text-sm font-bold transition-colors ${codeTab === langKey ? 'bg-blue-600 text-white' : 'bg-white/10 text-white/50 hover:bg-white/20'}`}>
                   {langKey}
                 </button>
               ))}
@@ -145,20 +145,27 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, lang, onClo
               </SyntaxHighlighter>
             </div>
           </div>
-          <div className="w-full lg:w-[50%] h-[50vh] lg:h-full bg-slate-50 flex flex-col order-1 lg:order-2">
+          <div className="w-full lg:w-[50%] h-auto lg:h-full bg-slate-50 flex flex-col order-1 lg:order-2">
             <div className="h-12 bg-slate-200 border-b border-slate-300 flex items-center px-4 gap-2">
               <div className="w-3 h-3 rounded-full bg-red-400"></div><div className="w-3 h-3 rounded-full bg-amber-400"></div><div className="w-3 h-3 rounded-full bg-green-400"></div>
-              <span className="ml-4 text-xs text-slate-500 font-medium uppercase tracking-widest">Live Preview</span>
+              <span className="ml-4 text-xs text-slate-500 font-medium uppercase">Live Preview</span>
             </div>
-            <div className="flex-1 flex items-center justify-center p-8 text-center">
-              {project.demoComponent || <p className="text-slate-400">Preview not available</p>}
+            <div className="flex-1 overflow-visible lg:overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-300 hover:[&::-webkit-scrollbar-thumb]:bg-slate-400 [&::-webkit-scrollbar-thumb]:rounded-full [scrollbar-width:thin] [scrollbar-color:#cbd5e1_transparent]">
+              {/* 上下推擠空間：內容少時置中，內容比預覽區高時可捲動、不被截斷 */}
+              <div className="flex flex-col min-h-full p-4 sm:p-8">
+                <div className="flex-1 min-h-0"></div>
+                <div className="w-full shrink-0 flex justify-center text-center">
+                  {project.demoComponent || <p className="text-slate-400">Preview not available</p>}
+                </div>
+                <div className="flex-1 min-h-0"></div>
+              </div>
             </div>
           </div>
         </>
       )}
 
       {/* 手機版專屬：底部返回按鈕 */}
-      <div className="md:hidden w-full p-6 pt-0 order-3 shrink-0">
+      <div className="md:hidden w-full p-6 order-3 shrink-0">
         <button onClick={onClose} className="w-full flex items-center justify-center gap-2 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-lg font-bold tracking-wider transition-colors cursor-pointer shadow-sm">
           <span className="material-symbols-outlined text-[20px]">arrow_back</span>
           {lang === 'en' ? 'Back' : '返回'}

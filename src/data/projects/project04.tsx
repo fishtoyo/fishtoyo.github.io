@@ -1,51 +1,54 @@
 import type { ProjectItem } from '../projects';
+import { CssTriangleGenerator } from '../../components/CssTriangleGenerator';
 
 export const project04: ProjectItem = {
   id: 4,
   mode: 'code-demo',
-  coverImage: '/assets/works/default.png', // 可以隨時替換為準備好的圖片路徑
+  coverImage: '/assets/videos/project04.mp4',
   codeDemo: {
-    html: `<button class="demo-btn">
-  Click Me
-</button>`,
-    css: `.demo-btn {
-  background-color: #082642;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.demo-btn:hover {
-  background-color: #009BD0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    html: `<!-- 
+  Triangle shapes can be created directly using pure CSS, 
+  eliminating the need for image files. 
+  You can also combine it with 'transform: rotate()' 
+  to achieve any desired angle.
+-->
+<div class="triangle"></div>`,
+    css: `.triangle {
+  /* 1. Width and height must be 0 */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  
+  /* 2. Define the size and shape via border-width */
+  border-width: 0 50px 100px 50px;
+  
+  /* 3. Core logic: set adjacent borders to transparent */
+  /* The following is a 'top' pointing triangle: keep the bottom border color */
+  border-color: transparent transparent #009BD0 transparent;
 }`,
-    tsx: `export default function Demo() {
+    tsx: `export default function CssTriangle() {
   return (
-    <button className="bg-[#082642] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#009BD0] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
-      Click Me
-    </button>
+    <div 
+      style={{
+        width: 0,
+        height: 0,
+        borderStyle: 'solid',
+        borderWidth: '0 50px 100px 50px',
+        borderColor: 'transparent transparent #009BD0 transparent'
+      }}
+    />
   );
 }`
   },
-  // 這裡放置真實要在畫面右側「Live Preview」渲染出來的 React 元件
-  demoComponent: (
-    <button className="bg-[#082642] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#009BD0] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 cursor-pointer">
-      Click Me
-    </button>
-  ),
+  demoComponent: <CssTriangleGenerator />,
   translations: {
     en: {
-      title: 'Code Demo Example',
-      desc: 'Interactive UI Component',
+      title: "CSS Triangle Generator",
+      desc: "An interactive tool to generate pure CSS triangles. You can customize the direction, size, and color dynamically."
     },
     zh: {
-      title: '程式碼實作展示',
-      desc: '互動式 UI 元件範例',
+      title: "CSS 三角形產生器",
+      desc: "互動式的純 CSS 三角形產生工具，透過調整方向、尺寸與顏色，幫助你快速生成並理解 CSS 邊框畫三角形的原理。"
     }
   }
 };

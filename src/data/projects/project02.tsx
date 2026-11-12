@@ -4,6 +4,7 @@ export const project02: ProjectItem = {
   id: 2, 
   mode: 'case-study',
   coverImage: '/assets/works/02.png',
+  link: 'https://www.taiwanbm.com.tw',
   caseStudyList: [
     {
       media: '/assets/works/02.png',
