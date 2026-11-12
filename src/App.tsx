@@ -425,7 +425,7 @@ function App() {
           handleScrollDrag={handleScrollDrag}
           scrollProgress={scrollProgress}
         />
-        <ArchiveSection isHorizontal={isHorizontal} t={t} />
+        <ArchiveSection isHorizontal={isHorizontal} t={t} lang={lang} />
       </main>
 
       {/* Global Fixed Scroll Mouse */}

@@ -8,10 +8,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      // 多頁輸出：/ 為入口頁、/resume/ 為個人履歷（工作室在另一個 repo：fishtoyo/studio）
+      // 多頁輸出：/ 為入口頁、/resume/ 為個人履歷、/resume/cases.html 為作品總覽（工作室在另一個 repo：fishtoyo/studio）
       input: {
         main: resolve(__dirname, 'index.html'),
         resume: resolve(__dirname, 'resume/index.html'),
+        cases: resolve(__dirname, 'resume/cases.html'),
       },
     },
   },

@@ -1,0 +1,4 @@
+/* 作品總覽是長頁面，取消履歷首頁的整屏吸附捲動 */
+html {
+  scroll-snap-type: none;
+}
