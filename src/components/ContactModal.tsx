@@ -48,7 +48,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
           <span className="material-symbols-outlined">close</span>
         </button>
         <div className="w-28 h-28 mx-auto bg-slate-100 rounded-full overflow-hidden mb-5 border-4 border-slate-50 shadow-sm">
-          <img src="/archive/assets/images/author.png" alt="Profile" className="w-full h-full object-cover" />
+          <img src="/resume/archive/assets/images/author.png" alt="Profile" className="w-full h-full object-cover" />
         </div>
         <h3 className="text-3xl font-bold text-slate-900 mb-1">鄭于庭</h3>
         <p className="text-sm font-medium text-slate-400 tracking-widest uppercase">Yu-Ting, Cheng</p>

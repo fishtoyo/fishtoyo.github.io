@@ -13,7 +13,7 @@ export const ArchiveSection = ({ isHorizontal, t }: SectionProps) => (
           dangerouslySetInnerHTML={{ __html: t.archive.desc }}
         />
         <a
-          href="/archive/cases.html"
+          href="/resume/archive/cases.html"
           className="inline-block px-4 py-3 lg:py-[clamp(0.75rem,2vh,1rem)] lg:px-[clamp(1.5rem,3vh,2rem)] bg-[#082642] text-white text-[16px] lg:text-[clamp(18px,2.5vh,22px)] font-bold rounded-md hover:bg-[#0c3862] hover:scale-105 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
         >
           {t.archive.btn}

@@ -361,7 +361,7 @@ function App() {
 
       {/* Header 區塊 (改為全透明與包含 Material Icon) */}
       <header className="fixed top-0 left-0 w-full z-100 flex justify-between items-center pt-5 px-7.5 min-[744px]:pt-17.5 min-[744px]:px-16.25 bg-transparent transform-gpu will-change-transform">
-        <h1 onClick={() => window.location.href = '/'} className="w-32.5 h-9 bg-[url('/assets/logo.png')] bg-size-[129px_auto] bg-no-repeat bg-center text-[0px] cursor-pointer drop-shadow-md title-attr" title="首頁">
+        <h1 onClick={() => window.location.href = '/resume/'} className="w-32.5 h-9 bg-[url('/assets/logo.png')] bg-size-[129px_auto] bg-no-repeat bg-center text-[0px] cursor-pointer drop-shadow-md title-attr" title="首頁">
           FISH - Portfolio
         </h1>
         <div className="flex gap-2 md:gap-6 text-sm font-bold text-white/90 drop-shadow-md items-center">
